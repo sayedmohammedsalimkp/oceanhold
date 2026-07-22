@@ -19,6 +19,10 @@ import { ContactInquiry } from './contact/contact-inquiry.entity';
           config.get<string>('DB_SSL') === 'false'
             ? false
             : { rejectUnauthorized: false },
+        // Prefer IPv4 (Render often cannot dial Supabase IPv6)
+        extra: {
+          family: 4,
+        },
       }),
     }),
     ContactModule,

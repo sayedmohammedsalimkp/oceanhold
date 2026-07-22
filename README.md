@@ -18,8 +18,10 @@ oceanhold/
 ## 1. Supabase
 1. Create a project at [supabase.com](https://supabase.com)
 2. Open **SQL Editor**, paste and run [`supabase/schema.sql`](supabase/schema.sql)
-3. Copy **Project Settings → Database → Connection string** (prefer Session / Transaction pooler URI for Render)
-4. Use that as `DATABASE_URL`
+3. Copy connection string from **Project Settings → Database → Connect**
+4. On Render use **Connection pooling → Transaction** URI (host has `pooler.supabase.com`, port **6543**)
+5. Do **not** use Direct connection `db.xxx.supabase.co:5432` on Render — that often hits IPv6 and fails with `ENETUNREACH`
+6. Paste pooler URI as `DATABASE_URL` (URL-encode special chars in password)
 
 ## 2. SMTP email (Gmail example)
 1. Open Google Account → **Security** → enable 2-Step Verification
