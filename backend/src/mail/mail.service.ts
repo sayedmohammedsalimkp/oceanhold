@@ -1,5 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import * as dns from 'dns/promises';
 import * as nodemailer from 'nodemailer';
 import type { Transporter } from 'nodemailer';
 import { CreateContactDto } from '../contact/dto/create-contact.dto';
@@ -7,40 +8,76 @@ import { CreateContactDto } from '../contact/dto/create-contact.dto';
 @Injectable()
 export class MailService {
   private readonly logger = new Logger(MailService.name);
-  private readonly transporter: Transporter | null;
+  private transporter: Transporter | null = null;
   private readonly from: string;
   private readonly to: string;
+  private readonly smtpHost?: string;
+  private readonly smtpPort: number;
+  private readonly smtpSecure: boolean;
+  private readonly smtpUser?: string;
+  private readonly smtpPass?: string;
+  private initPromise: Promise<void>;
 
   constructor(private readonly config: ConfigService) {
-    const host = this.config.get<string>('SMTP_HOST');
-    const user = this.config.get<string>('SMTP_USER');
-    const pass = this.config.get<string>('SMTP_PASS');
-    const port = Number(this.config.get<string>('SMTP_PORT') || 587);
-    const secure =
-      this.config.get<string>('SMTP_SECURE') === 'true' || port === 465;
+    this.smtpHost = this.config.get<string>('SMTP_HOST');
+    this.smtpUser = this.config.get<string>('SMTP_USER');
+    this.smtpPass = this.config.get<string>('SMTP_PASS');
+    this.smtpPort = Number(this.config.get<string>('SMTP_PORT') || 587);
+    this.smtpSecure =
+      this.config.get<string>('SMTP_SECURE') === 'true' ||
+      this.smtpPort === 465;
 
     this.from =
       this.config.get<string>('MAIL_FROM') ||
-      `Oceanhold Exports <${user || 'oceanholdexports@gmail.com'}>`;
+      `Oceanhold Exports <${this.smtpUser || 'oceanholdexports@gmail.com'}>`;
     this.to =
       this.config.get<string>('MAIL_TO') || 'oceanholdexports@gmail.com';
 
-    if (host && user && pass) {
-      this.transporter = nodemailer.createTransport({
-        host,
-        port,
-        secure,
-        auth: { user, pass },
-      });
-    } else {
-      this.transporter = null;
+    this.initPromise = this.initTransporter();
+  }
+
+  private async initTransporter(): Promise<void> {
+    if (!this.smtpHost || !this.smtpUser || !this.smtpPass) {
       this.logger.warn(
         'SMTP_HOST / SMTP_USER / SMTP_PASS missing — email send disabled',
       );
+      return;
     }
+
+    // Render free often cannot dial IPv6 — resolve Gmail SMTP to IPv4
+    let connectHost = this.smtpHost;
+    try {
+      const { address } = await dns.lookup(this.smtpHost, { family: 4 });
+      connectHost = address;
+      this.logger.log(`SMTP IPv4 ${this.smtpHost} -> ${address}`);
+    } catch (err) {
+      this.logger.warn(
+        `SMTP IPv4 lookup failed, falling back to hostname: ${
+          err instanceof Error ? err.message : String(err)
+        }`,
+      );
+    }
+
+    this.transporter = nodemailer.createTransport({
+      host: connectHost,
+      port: this.smtpPort,
+      secure: this.smtpSecure,
+      auth: { user: this.smtpUser, pass: this.smtpPass },
+      // Force IPv4 sockets; servername keeps TLS cert valid when host is an IP
+      family: 4,
+      tls: {
+        servername: this.smtpHost,
+        rejectUnauthorized: true,
+      },
+      connectionTimeout: 20000,
+      greetingTimeout: 20000,
+      socketTimeout: 20000,
+    } as nodemailer.TransportOptions);
   }
 
   async sendInquiryEmails(dto: CreateContactDto): Promise<void> {
+    await this.initPromise;
+
     if (!this.transporter) {
       this.logger.warn('SMTP not configured — skipping email send');
       return;
@@ -82,6 +119,7 @@ export class MailService {
           html: autoReplyHtml,
         }),
       ]);
+      this.logger.log(`Inquiry emails sent for ${dto.email}`);
     } catch (err) {
       this.logger.error(
         `SMTP send failed: ${err instanceof Error ? err.message : String(err)}`,
