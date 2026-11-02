@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Oceanhold Exports | Indian Millets, Sorghum &amp; Moringa Sourcing and Export</title>
   <meta name="description" content="Oceanhold Exports is an India-based agricultural sourcing and export partner for millets, white sorghum and moringa leaf powder, with wider sourcing of rice, coffee and spices for international buyers.">
-  <meta name="theme-color" content="#1a2a20">
+  <meta name="theme-color" content="#0f2e2a">
   <meta property="og:title" content="Oceanhold Exports — Rooted in India. Sourced for the world.">
   <meta property="og:description" content="Agricultural sourcing and export partner connecting global buyers with millets, sorghum, moringa and more from India.">
   <meta property="og:image" content="assets/img/hero-grains.jpg">
@@ -27,10 +27,20 @@
       <nav class="nav" aria-label="Main">
         <ul class="nav__list">
           <li><a class="nav__link" href="index.html" aria-current="page">Home</a></li>
-          <li><a class="nav__link" href="products.html">Products</a></li>
-          <li><a class="nav__link" href="sourcing.html">Our Sourcing</a></li>
-          <li><a class="nav__link" href="about.html">About Us</a></li>
-          <li><a class="nav__link" href="contact.html">Contact</a></li>
+          <li class="has-drop">
+            <a class="nav__link" href="products.html">Products <svg class="icon nav__caret"><use href="#i-caret"/></svg></a>
+            <ul class="drop">
+              <li><a href="products.html#white-sorghum">White Sorghum</a></li>
+              <li><a href="products.html#finger-millet">Finger Millet (Ragi)</a></li>
+              <li><a href="products.html#little-millet">Little Millet</a></li>
+              <li><a href="products.html#moringa">Moringa Leaf Powder</a></li>
+              <li><a href="products.html#additional">Rice, Coffee &amp; Spices</a></li>
+              <li><a href="products.html#packaging">Packaging</a></li>
+            </ul>
+          </li>
+          <li><a class="nav__link" href="about.html">Our Story</a></li>
+          <li><a class="nav__link" href="sourcing.html#quality">Quality</a></li>
+          <li><a class="nav__link" href="sourcing.html">Global Trade</a></li>
         </ul>
         <a class="btn btn--primary" href="contact.html">Enquire Now <svg class="icon"><use href="#i-arrow-ne"/></svg></a>
       </nav>
@@ -41,215 +51,120 @@
   <main id="main">
 
     <!-- Hero -->
-    <section class="hero-sea">
-      <div class="hero-sea__water"><img src="assets/img/ocean.jpg" alt=""></div>
-      <div class="hero-sea__photo">
-        <img src="assets/img/hero-grains.jpg" alt="Bowls of white sorghum, finger millet, little millet and moringa leaf powder" fetchpriority="high">
-        <span class="hero-sea__badge"><svg class="icon"><use href="#i-pin"/></svg>Sourced across India · Shipped worldwide</span>
-      </div>
+    <section class="hero-ref">
+      <div class="hero-ref__sea"><img src="assets/img/ocean.jpg" alt=""></div>
+      <div class="hero-ref__photo"><img src="assets/img/hero-grains.jpg" alt="Bowls of white sorghum, finger millet, little millet and moringa leaf powder" fetchpriority="high"></div>
       <div class="wrap">
-        <div class="hero-sea__copy">
-          <span class="eyebrow eyebrow--light">Indian Agro Sourcing &amp; Exports</span>
-          <h1>India’s harvest, <em>thoughtfully sourced</em> for the world.</h1>
-          <p class="lead">Millets, white sorghum and moringa leaf powder — plus rice, coffee and spices sourced to your requirement — through one accountable export partner.</p>
-          <div class="btn-row">
-            <a class="btn btn--gold" href="products.html">Explore Our Products <svg class="icon"><use href="#i-arrow"/></svg></a>
-            <a class="btn btn--ghost-light" href="contact.html?type=Discuss%20Bulk%20Requirements">Discuss Requirements</a>
-          </div>
-          <div class="hero-sea__meta">
-            <div><strong>4</strong>Core products</div>
-            <div><strong>FSSAI · APEDA</strong>Registered exporter</div>
-            <div><strong>Kerala</strong>India-based team</div>
-          </div>
+        <div class="hero-ref__copy">
+          <span class="eyebrow eyebrow--light">Indian Agro Foods Exports</span>
+          <h1>India’s Harvest, Sourced for the World</h1>
+          <p>Premium millets, white sorghum, moringa, rice, coffee, spices and a diverse range of Indian agro products for global markets.</p>
+          <a class="btn btn--gold" href="products.html">Explore Our Products <svg class="icon"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
     </section>
 
     <!-- Trust strip -->
-    <section class="trust" aria-label="Highlights">
-      <div class="wrap trust__grid">
-        <div class="trust__item"><svg class="icon"><use href="#i-network"/></svg>Supplier Network<br>Across India</div>
-        <div class="trust__item"><svg class="icon"><use href="#i-flask"/></svg>Lab Tested<br>Before Export</div>
-        <div class="trust__item"><svg class="icon"><use href="#i-box"/></svg>Bulk &amp; Private<br>Label Packaging</div>
-        <div class="trust__item"><svg class="icon"><use href="#i-doc-check"/></svg>Complete Export<br>Documentation</div>
+    <section class="trust-ref" aria-label="Highlights">
+      <div class="wrap trust-ref__grid">
+        <div class="trust-ref__item"><svg class="icon"><use href="#i-leaf-circle"/></svg><span>Sourced from<br>Trusted Farms</span></div>
+        <div class="trust-ref__item"><svg class="icon"><use href="#i-award"/></svg><span>Export-Grade<br>Quality</span></div>
+        <div class="trust-ref__item"><svg class="icon"><use href="#i-ship"/></svg><span>Reliable<br>Global Supply</span></div>
+        <div class="trust-ref__item"><svg class="icon"><use href="#i-handshake"/></svg><span>Long-Term<br>Trade Partnerships</span></div>
       </div>
     </section>
 
     <!-- Products -->
-    <section class="section" id="products">
+    <section class="section products-ref" id="products">
       <div class="wrap">
-        <div class="section-head reveal">
-          <span class="eyebrow eyebrow--center">Our Core Focus</span>
-          <h2>Ancient Grains &amp; Superfoods from India</h2>
-          <p>Specialised in what we know. We lead with millets, sorghum and moringa — products we understand closely, from origin to specification.</p>
+        <div class="title-ref reveal">
+          <span class="eyebrow eyebrow--center">Our Products</span>
+          <h2>A Curated Range from India</h2>
         </div>
-
-        <div class="tile-grid">
-          <a class="tile reveal" href="products.html#white-sorghum">
-            <img src="assets/img/sorghum-wide.jpg" alt="White sorghum (jowar) in a ceramic bowl" loading="lazy">
-            <div class="tile__body"><div><span class="tile__tag">Sorghum</span><h3>White Sorghum</h3></div><span class="tile__arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></div>
+        <div class="tiles-ref">
+          <a class="tile-ref reveal" href="products.html#white-sorghum">
+            <img src="assets/img/sorghum.jpg" alt="White sorghum (jowar) in a wooden bowl" loading="lazy">
+            <span class="tile-ref__label">Sorghum <i><svg class="icon"><use href="#i-arrow"/></svg></i></span>
           </a>
-          <a class="tile reveal" href="products.html#finger-millet">
-            <img src="assets/img/ragi-wide.jpg" alt="Finger millet (ragi) in a wooden bowl" loading="lazy">
-            <div class="tile__body"><div><span class="tile__tag">Millet</span><h3>Finger Millet</h3></div><span class="tile__arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></div>
+          <a class="tile-ref reveal" href="products.html#finger-millet">
+            <img src="assets/img/ragi.jpg" alt="Finger millet (ragi) in a bowl" loading="lazy">
+            <span class="tile-ref__label">Ragi <i><svg class="icon"><use href="#i-arrow"/></svg></i></span>
           </a>
-          <a class="tile reveal" href="products.html#little-millet">
-            <img src="assets/img/millet-wide.jpg" alt="Little millet in a wooden bowl" loading="lazy">
-            <div class="tile__body"><div><span class="tile__tag">Millet</span><h3>Little Millet</h3></div><span class="tile__arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></div>
+          <a class="tile-ref reveal" href="products.html#little-millet">
+            <img src="assets/img/little-millet.jpg" alt="Little millet in a wooden bowl" loading="lazy">
+            <span class="tile-ref__label">Millets <i><svg class="icon"><use href="#i-arrow"/></svg></i></span>
           </a>
-          <a class="tile reveal" href="products.html#moringa">
-            <img src="assets/img/moringa-wide.jpg" alt="Moringa leaf powder with fresh leaves" loading="lazy">
-            <div class="tile__body"><div><span class="tile__tag">Superfood</span><h3>Moringa Powder</h3></div><span class="tile__arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></div>
+          <a class="tile-ref reveal" href="products.html#moringa">
+            <img src="assets/img/moringa.jpg" alt="Moringa leaf powder in a wooden bowl" loading="lazy">
+            <span class="tile-ref__label">Moringa <i><svg class="icon"><use href="#i-arrow"/></svg></i></span>
           </a>
-          <a class="tile tile--more reveal" href="products.html#additional">
-            <div class="tile__icons" aria-hidden="true">
-              <svg class="icon"><use href="#i-bowl"/></svg><svg class="icon"><use href="#i-bean"/></svg><svg class="icon"><use href="#i-pod"/></svg>
-              <svg class="icon"><use href="#i-pepper"/></svg><svg class="icon"><use href="#i-spice"/></svg><svg class="icon"><use href="#i-more"/></svg>
-            </div>
-            <div class="tile__body"><div><span class="tile__tag">Sourced to order</span><h3>Other Products</h3></div><span class="tile__arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></div>
+          <a class="tile-ref reveal" href="products.html#additional">
+            <img src="assets/img/hero-grains.jpg" alt="Assorted Indian grains and moringa" loading="lazy">
+            <span class="tile-ref__label">Spices &amp; Coffee <i><svg class="icon"><use href="#i-arrow"/></svg></i></span>
+          </a>
+          <a class="tile-ref reveal" href="products.html#additional">
+            <img src="assets/img/packaging.jpg" alt="Export packaging with grain pouches and cartons" loading="lazy">
+            <span class="tile-ref__label">Other Products <i><svg class="icon"><use href="#i-arrow"/></svg></i></span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- About intro -->
-    <section class="bleed">
-        <div class="bleed__media">
-          <img src="assets/img/moringa-wide.jpg" alt="Moringa leaf powder with fresh moringa leaves" loading="lazy">
-        </div>
-        <svg class="bleed__leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".35" aria-hidden="true"><use href="#i-leaf"/></svg>
-        <div class="bleed__copy reveal">
-          <span class="eyebrow">About Oceanhold</span>
-          <h2>An India-based sourcing &amp; export partner</h2>
-          <p class="lead">India has a remarkable agricultural diversity, shaped by its regions, farmers and traditional knowledge. Oceanhold Exports works with a network of suppliers across the country to connect this diversity with international markets.</p>
-          <p>We focus on understanding what each buyer needs — product, grade, quantity, packaging and destination — then identify suitable sourcing options and coordinate the details that move products into international trade.</p>
-          <blockquote class="quote">“Every shipment represents more than just products — it represents trust, quality and the agricultural heritage of India.”</blockquote>
-          <a class="btn btn--primary" href="about.html">Know More <svg class="icon"><use href="#i-arrow"/></svg></a>
-        </div>
-    </section>
-
-    <!-- Why source through us -->
-    <section class="section dark">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="eyebrow eyebrow--center eyebrow--light">Why Source Through Us</span>
-          <h2>One accountable partner for multi-category Indian sourcing</h2>
-          <p>We coordinate with multiple suppliers so you don’t have to — and check every product for specification, quality and export readiness.</p>
-        </div>
-        <div class="feature-grid reveal">
-          <div class="feature">
-            <svg class="icon"><use href="#i-network"/></svg>
-            <h3>Supplier-Network Access</h3>
-            <p>Access to a network of growers, processors and suppliers across India’s key agricultural regions.</p>
-          </div>
-          <div class="feature">
-            <svg class="icon"><use href="#i-users"/></svg>
-            <h3>Buyer-Centric Approach</h3>
-            <p>Every order is managed with transparency, on-time communication and attention to your specification.</p>
-          </div>
-          <div class="feature">
-            <svg class="icon"><use href="#i-flask"/></svg>
-            <h3>Quality Review &amp; Testing</h3>
-            <p>Samples, supplier documents and laboratory testing reviewed before goods are cleared for export.</p>
-          </div>
-          <div class="feature">
-            <svg class="icon"><use href="#i-sliders"/></svg>
-            <h3>Flexible Specifications</h3>
-            <p>Grades, volumes and packaging tailored to your market — bulk, private label or retail-ready.</p>
-          </div>
-          <div class="feature">
-            <svg class="icon"><use href="#i-doc-check"/></svg>
-            <h3>Export Coordination</h3>
-            <p>Documentation, packaging coordination, freight arrangements and shipment updates handled end to end.</p>
-          </div>
-          <div class="feature">
-            <svg class="icon"><use href="#i-handshake"/></svg>
-            <h3>Long-Term Partnerships</h3>
-            <p>We aim to be a dependable supply partner season after season — not a one-off transaction.</p>
-          </div>
-        </div>
-        <p class="statement reveal">Specialised in what we know. <span>Flexible in what we source.</span> Reliable in what we deliver.</p>
+    <!-- Our story -->
+    <section class="story-ref">
+      <div class="story-ref__media"><img src="assets/img/sorghum-wide.jpg" alt="White sorghum heads and grains on jute" loading="lazy"></div>
+      <div class="story-ref__copy reveal">
+        <svg class="story-ref__leaf" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width=".8" aria-hidden="true">
+          <path d="M20 112C42 80 64 58 104 18"/>
+          <path d="M44 84c-16-2-28-12-30-28 16 2 28 12 30 28Z"/><path d="M44 84c2-16 12-28 28-30-2 16-12 28-28 30Z"/>
+          <path d="M64 62c-14-4-24-14-24-30 14 4 24 14 24 30Z"/><path d="M64 62c4-14 14-24 30-24-4 14-14 24-30 24Z"/>
+          <path d="M84 40c-10-4-18-12-18-24 10 4 18 12 18 24Z"/><path d="M84 40c4-10 12-18 24-18-4 10-12 18-24 18Z"/>
+          <path d="M14 56c8 8 18 14 30 28M40 32c8 10 14 18 24 30M66 16c6 8 10 14 18 24M72 54c-8 2-16 6-28 30M94 38c-8 2-14 8-30 24M108 22c-8 2-14 8-24 18"/>
+        </svg>
+        <span class="eyebrow">Our Story</span>
+        <h2>A Contemporary Indian Export House</h2>
+        <p>Rooted in India’s rich agricultural heritage, Oceanhold Exports works with a network of suppliers across the country to connect quality Indian produce with discerning buyers around the world.</p>
+        <a class="btn btn--primary" href="about.html">Know More <svg class="icon"><use href="#i-arrow"/></svg></a>
       </div>
     </section>
 
-    <!-- Process -->
-    <section class="section">
+    <!-- Why Oceanhold -->
+    <section class="section why-ref">
       <div class="wrap">
-        <div class="section-head reveal">
-          <span class="eyebrow eyebrow--center">Our Sourcing Process</span>
-          <h2>From your requirement to a shipment at port</h2>
+        <div class="title-ref reveal">
+          <span class="eyebrow eyebrow--center">Why Oceanhold</span>
+          <h2>Specialised in What We Know</h2>
         </div>
-        <div class="process reveal">
-          <div class="step">
-            <div class="step__icon"><svg class="icon"><use href="#i-chat"/></svg></div>
-            <div class="step__num">STEP 01</div>
-            <h4>Understand</h4>
-            <p>Product, application, grade, quantity, packaging and destination.</p>
-          </div>
-          <div class="step">
-            <div class="step__icon"><svg class="icon"><use href="#i-search"/></svg></div>
-            <div class="step__num">STEP 02</div>
-            <h4>Identify Suppliers</h4>
-            <p>Match your needs with the right suppliers in our Indian network.</p>
-          </div>
-          <div class="step">
-            <div class="step__icon"><svg class="icon"><use href="#i-flask"/></svg></div>
-            <div class="step__num">STEP 03</div>
-            <h4>Review Quality</h4>
-            <p>Check specifications, samples, documents and lab testing.</p>
-          </div>
-          <div class="step">
-            <div class="step__icon"><svg class="icon"><use href="#i-scale"/></svg></div>
-            <div class="step__num">STEP 04</div>
-            <h4>Agree Terms</h4>
-            <p>Price basis, Incoterms, payment terms and lead time confirmed.</p>
-          </div>
-          <div class="step">
-            <div class="step__icon"><svg class="icon"><use href="#i-ship"/></svg></div>
-            <div class="step__num">STEP 05</div>
-            <h4>Export</h4>
-            <p>Packaging, documentation, logistics and shipment updates.</p>
-          </div>
-        </div>
-        <p style="text-align:center;margin-top:52px" class="reveal"><a class="link-arrow" href="sourcing.html">Discover our sourcing approach <svg class="icon"><use href="#i-arrow"/></svg></a></p>
-      </div>
-    </section>
-
-    <!-- Export capabilities -->
-    <section class="section bg-linen-2">
-      <div class="wrap split split--wide-media">
-        <div class="reveal">
-          <span class="eyebrow">Export Capabilities</span>
-          <h2>Quality, packaging &amp; paperwork — coordinated</h2>
-          <p class="lead">Every shipment is prepared to protect product quality through storage and international transport, and backed by the documentation your market requires.</p>
-          <ul class="check-list">
-            <li><svg class="icon"><use href="#i-check"/></svg><span><strong>Registered &amp; licensed</strong> — FSSAI, APEDA and Spices Board of India.</span></li>
-            <li><svg class="icon"><use href="#i-check"/></svg><span><strong>Shipment documents</strong> — Certificate of Origin, Phytosanitary, Certificate of Analysis and Fumigation (when required).</span></li>
-            <li><svg class="icon"><use href="#i-check"/></svg><span><strong>Packaging options</strong> — bulk bags, woven PP, kraft pouches, export cartons and private label with multi-language labels.</span></li>
-          </ul>
-          <div class="btn-row">
-            <a class="btn btn--primary" href="sourcing.html#quality">Quality &amp; Documentation <svg class="icon"><use href="#i-arrow"/></svg></a>
-          </div>
-        </div>
-        <div class="split__media split__media--land reveal">
-          <img src="assets/img/packaging.jpg" alt="Export packaging: jumbo bags, kraft pouches, clear pouches and cartons on a pallet" loading="lazy">
+        <div class="why-ref__grid">
+          <div class="why-ref__item reveal"><svg class="icon"><use href="#i-network"/></svg><h3>Supplier Network</h3><p>Access to growers and processors across India’s key agricultural regions.</p></div>
+          <div class="why-ref__item reveal"><svg class="icon"><use href="#i-flask"/></svg><h3>Lab Tested</h3><p>Every batch tested for quality, purity and safety before export.</p></div>
+          <div class="why-ref__item reveal"><svg class="icon"><use href="#i-box"/></svg><h3>Flexible Packaging</h3><p>Bulk, private label or customised packing to your specification.</p></div>
+          <div class="why-ref__item reveal"><svg class="icon"><use href="#i-doc-check"/></svg><h3>Full Documentation</h3><p>Origin, phytosanitary, analysis and fumigation certificates handled.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta">
-      <div class="cta__ocean"><img src="assets/img/ocean.jpg" alt="" loading="lazy"></div>
-      <svg class="cta__art cta__art--l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".5"><use href="#i-grain"/></svg>
-      <svg class="cta__art cta__art--r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".5"><use href="#i-leaf"/></svg>
+    <!-- Global trade CTA -->
+    <section class="trade-ref">
+      <svg class="trade-ref__art" viewBox="0 0 260 220" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+        <path d="M10 220V120h240v100"/>
+        <path d="M95 220v-62a35 35 0 0 1 70 0v62"/>
+        <path d="M105 220v-58a25 25 0 0 1 50 0v58"/>
+        <path d="M30 220v-40a14 14 0 0 1 28 0v40M202 220v-40a14 14 0 0 1 28 0v40"/>
+        <path d="M30 150a14 14 0 0 1 28 0v6H30Zm172 0a14 14 0 0 1 28 0v6h-28Z"/>
+        <path d="M10 120h240M18 110h224v10H18Z"/>
+        <path d="M30 110V70h40v40M190 110V70h40v40"/>
+        <path d="M30 70c0-16 20-24 20-36 0 12 20 20 20 36M190 70c0-16 20-24 20-36 0 12 20 20 20 36"/>
+        <path d="M50 34v-8M210 34v-8"/>
+        <path d="M90 110V82h80v28M98 82c0-20 32-30 32-46 0 16 32 26 32 46"/><path d="M130 36v-10"/>
+        <path d="M40 80v20M60 80v20M200 80v20M220 80v20M110 92v12M130 92v12M150 92v12"/>
+        <path d="M10 140h20M58 140h37M165 140h37M230 140h20M10 170h20M230 170h20"/>
+      </svg>
       <div class="wrap">
-        <span class="eyebrow eyebrow--center eyebrow--light">Start a Business Enquiry</span>
-        <h2>Tell us what you need. We’ll find it in India.</h2>
-        <p>Share the product, grade, quantity, destination and packaging you have in mind — we’ll come back with sourcing options, specifications and a quotation.</p>
-        <div class="btn-row">
-          <a class="btn btn--light" href="contact.html">Request a Quotation <svg class="icon"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn--ghost-light" href="https://wa.me/918848538567" target="_blank" rel="noopener">Chat on WhatsApp</a>
-        </div>
+        <span class="eyebrow eyebrow--center eyebrow--light">Global Trade</span>
+        <h2>Partner with India’s Trusted Agro Sourcing House</h2>
+        <p>Let’s explore opportunities to bring the best of India to your market.</p>
+        <a class="btn btn--light" href="contact.html">Enquire Now <svg class="icon"><use href="#i-arrow-ne"/></svg></a>
       </div>
     </section>
   </main>
@@ -263,9 +178,9 @@
       <div>
         <h4>Company</h4>
         <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="sourcing.html">Our Sourcing</a></li>
-          <li><a href="sourcing.html#quality">Quality &amp; Certifications</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="sourcing.html#quality">Quality</a></li>
+          <li><a href="sourcing.html">Global Trade</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
