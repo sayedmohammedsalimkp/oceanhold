@@ -1,11 +1,3 @@
-node_modules/
-dist/
-.next/
-out/
-.env
-.env.local
-.env.*.local
-*.log
 .DS_Store
-coverage/
-_pdf_extract.txt
+Thumbs.db
+.claude/
