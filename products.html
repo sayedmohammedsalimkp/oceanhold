@@ -9,7 +9,7 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
@@ -71,101 +71,159 @@
           <h2>Products we have established sourcing connections for</h2>
           <p class="cat-meta">30 products · 6 categories</p>
         </div>
-        <div class="cc-grid">
-          <article class="cc reveal" id="cat-malt">
-            <div class="cc__media"><img src="assets/img/cat-breakfast.jpg" alt="A bowl of breakfast porridge with fruit" loading="lazy"><span class="cc__num">01</span></div>
-            <div class="cc__body">
-              <span class="cc__count">5 products</span><h3>Malt &amp; Breakfast Products</h3>
-              <div class="cc__group">
-                <h4>Vegetable &amp; Fruit Malts</h4>
-                <ul><li>ABC Malt</li><li>Beetroot Malt</li><li>Carrot Malt</li></ul>
+        <div class="showcase reveal" data-showcase>
+          <div class="showcase__stage">
+            <article class="panel" id="cat-malt" role="tabpanel" aria-labelledby="tab-malt" tabindex="0">
+              <div class="panel__banner">
+                <img src="assets/img/cat-breakfast.jpg" alt="A bowl of breakfast porridge with fruit" loading="lazy">
+                <span class="panel__num">01</span>
+                <div class="panel__title"><span>5 products</span><h3>Malt &amp; Breakfast Products</h3></div>
               </div>
-              <div class="cc__group">
-                <h4>Millet Breakfast Products</h4>
-                <ul><li>Ragi Muesli</li><li>Millet Muesli</li></ul>
+              <div class="panel__body">
+                <div class="panel__groups">
+                <div class="panel__group">
+                  <h4>Vegetable &amp; Fruit Malts</h4>
+                  <ul><li>ABC Malt</li><li>Beetroot Malt</li><li>Carrot Malt</li></ul>
+                </div>
+                <div class="panel__group">
+                  <h4>Millet Breakfast Products</h4>
+                  <ul><li>Ragi Muesli</li><li>Millet Muesli</li></ul>
+                </div>
+                </div>
+                <a class="btn btn--primary panel__cta" href="contact.html?product=Malt%20%26%20Breakfast%20Products">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
               </div>
-              <a class="cc__link" href="contact.html?product=Malt%20%26%20Breakfast%20Products">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
-            </div>
-          </article>
-          <article class="cc reveal" id="cat-flours">
-            <div class="cc__media"><img src="assets/img/moringa-wide.jpg" alt="Moringa leaf powder in a wooden bowl" loading="lazy"><span class="cc__num">02</span></div>
-            <div class="cc__body">
-              <span class="cc__count">7 products</span><h3>Natural Flours &amp; Powders</h3>
-              <div class="cc__group">
-                <h4>Root &amp; Tuber Powders</h4>
-                <ul><li>Kannankaya Powder</li><li>Arrowroot Powder</li><li>Sweet Potato Powder</li></ul>
+            </article>
+            <article class="panel" id="cat-flours" role="tabpanel" aria-labelledby="tab-flours" tabindex="0">
+              <div class="panel__banner">
+                <img src="assets/img/moringa-wide.jpg" alt="Moringa leaf powder in a wooden bowl" loading="lazy">
+                <span class="panel__num">02</span>
+                <div class="panel__title"><span>7 products</span><h3>Natural Flours &amp; Powders</h3></div>
               </div>
-              <div class="cc__group">
-                <h4>Fruit Powders</h4>
-                <ul><li>Jackfruit Powder</li><li>Natural Dried Dates Powder (Premium Khajoor)</li></ul>
+              <div class="panel__body">
+                <div class="panel__groups">
+                <div class="panel__group">
+                  <h4>Root &amp; Tuber Powders</h4>
+                  <ul><li>Kannankaya Powder</li><li>Arrowroot Powder</li><li>Sweet Potato Powder</li></ul>
+                </div>
+                <div class="panel__group">
+                  <h4>Fruit Powders</h4>
+                  <ul><li>Jackfruit Powder</li><li>Natural Dried Dates Powder (Premium Khajoor)</li></ul>
+                </div>
+                <div class="panel__group">
+                  <h4>Millet Powders</h4>
+                  <ul><li>Sprouted Ragi Powder</li></ul>
+                </div>
+                <div class="panel__group">
+                  <h4>Herbal &amp; Leaf Powders</h4>
+                  <ul><li>Moringa Leaf Powder</li></ul>
+                </div>
+                </div>
+                <a class="btn btn--primary panel__cta" href="contact.html?product=Natural%20Flours%20%26%20Powders">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
               </div>
-              <div class="cc__group">
-                <h4>Millet Powders</h4>
-                <ul><li>Sprouted Ragi Powder</li></ul>
+            </article>
+            <article class="panel" id="cat-dehydrated" role="tabpanel" aria-labelledby="tab-dehydrated" tabindex="0">
+              <div class="panel__banner">
+                <div class="cc__art"><svg class="icon"><use href="#i-slices"/></svg></div>
+                <span class="panel__num">03</span>
+                <div class="panel__title"><span>1 product</span><h3>Dehydrated Products</h3></div>
               </div>
-              <div class="cc__group">
-                <h4>Herbal &amp; Leaf Powders</h4>
-                <ul><li>Moringa Leaf Powder</li></ul>
+              <div class="panel__body">
+                <div class="panel__groups">
+                <div class="panel__group">
+                  <h4>Dehydrated Vegetables &amp; Tubers</h4>
+                  <ul><li>Dehydrated Kannankaya Slices</li></ul>
+                </div>
+                </div>
+                <a class="btn btn--primary panel__cta" href="contact.html?product=Dehydrated%20Products">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
               </div>
-              <a class="cc__link" href="contact.html?product=Natural%20Flours%20%26%20Powders">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
-            </div>
-          </article>
-          <article class="cc reveal" id="cat-dehydrated">
-            <div class="cc__media"><div class="cc__art"><svg class="icon"><use href="#i-slices"/></svg></div><span class="cc__num">03</span></div>
-            <div class="cc__body">
-              <span class="cc__count">1 product</span><h3>Dehydrated Products</h3>
-              <div class="cc__group">
-                <h4>Dehydrated Vegetables &amp; Tubers</h4>
-                <ul><li>Dehydrated Kannankaya Slices</li></ul>
+            </article>
+            <article class="panel" id="cat-millets" role="tabpanel" aria-labelledby="tab-millets" tabindex="0">
+              <div class="panel__banner">
+                <img src="assets/img/millet-wide.jpg" alt="Little millet in a wooden bowl with a scoop" loading="lazy">
+                <span class="panel__num">04</span>
+                <div class="panel__title"><span>10 products</span><h3>Millets &amp; Ancient Grains</h3></div>
               </div>
-              <a class="cc__link" href="contact.html?product=Dehydrated%20Products">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
-            </div>
-          </article>
-          <article class="cc reveal" id="cat-millets">
-            <div class="cc__media"><img src="assets/img/millet-wide.jpg" alt="Little millet in a wooden bowl with a scoop" loading="lazy"><span class="cc__num">04</span></div>
-            <div class="cc__body">
-              <span class="cc__count">10 products</span><h3>Millets &amp; Ancient Grains</h3>
-              <div class="cc__group">
-                <h4>Small Millets</h4>
-                <ul><li>Foxtail Millet</li><li>Kodo Millet</li><li>Proso Millet</li><li>Browntop Millet</li><li>Barnyard Millet</li><li>Little Millet</li></ul>
+              <div class="panel__body">
+                <div class="panel__groups">
+                <div class="panel__group">
+                  <h4>Small Millets</h4>
+                  <ul><li>Foxtail Millet</li><li>Kodo Millet</li><li>Proso Millet</li><li>Browntop Millet</li><li>Barnyard Millet</li><li>Little Millet</li></ul>
+                </div>
+                <div class="panel__group">
+                  <h4>Traditional Millets</h4>
+                  <ul><li>Finger Millet</li></ul>
+                </div>
+                <div class="panel__group">
+                  <h4>Other Ancient Grains</h4>
+                  <ul><li>White Quinoa</li><li>Black Quinoa</li><li>Red Quinoa</li></ul>
+                </div>
+                </div>
+                <a class="btn btn--primary panel__cta" href="contact.html?product=Millets%20%26%20Ancient%20Grains">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
               </div>
-              <div class="cc__group">
-                <h4>Traditional Millets</h4>
-                <ul><li>Finger Millet</li></ul>
+            </article>
+            <article class="panel" id="cat-seeds" role="tabpanel" aria-labelledby="tab-seeds" tabindex="0">
+              <div class="panel__banner">
+                <div class="cc__art"><svg class="icon"><use href="#i-seeds"/></svg></div>
+                <span class="panel__num">05</span>
+                <div class="panel__title"><span>5 products</span><h3>Seeds &amp; Superfoods</h3></div>
               </div>
-              <div class="cc__group">
-                <h4>Other Ancient Grains</h4>
-                <ul><li>White Quinoa</li><li>Black Quinoa</li><li>Red Quinoa</li></ul>
+              <div class="panel__body">
+                <div class="panel__groups">
+                <div class="panel__group">
+                  <h4>Edible Seeds</h4>
+                  <ul><li>White Chia Seeds</li><li>Flax Seeds</li><li>Pumpkin Seeds</li><li>Sunflower Seeds</li><li>Basil Seeds</li></ul>
+                </div>
+                </div>
+                <a class="btn btn--primary panel__cta" href="contact.html?product=Seeds%20%26%20Superfoods">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
               </div>
-              <a class="cc__link" href="contact.html?product=Millets%20%26%20Ancient%20Grains">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
-            </div>
-          </article>
-          <article class="cc reveal" id="cat-seeds">
-            <div class="cc__media"><div class="cc__art"><svg class="icon"><use href="#i-seeds"/></svg></div><span class="cc__num">05</span></div>
-            <div class="cc__body">
-              <span class="cc__count">5 products</span><h3>Seeds &amp; Superfoods</h3>
-              <div class="cc__group">
-                <h4>Edible Seeds</h4>
-                <ul><li>White Chia Seeds</li><li>Flax Seeds</li><li>Pumpkin Seeds</li><li>Sunflower Seeds</li><li>Basil Seeds</li></ul>
+            </article>
+            <article class="panel" id="cat-commodities" role="tabpanel" aria-labelledby="tab-commodities" tabindex="0">
+              <div class="panel__banner">
+                <img src="assets/img/sorghum-wide.jpg" alt="White sorghum in a ceramic bowl on jute" loading="lazy">
+                <span class="panel__num">06</span>
+                <div class="panel__title"><span>2 products</span><h3>Agricultural Commodities</h3></div>
               </div>
-              <a class="cc__link" href="contact.html?product=Seeds%20%26%20Superfoods">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
-            </div>
-          </article>
-          <article class="cc reveal" id="cat-commodities">
-            <div class="cc__media"><img src="assets/img/sorghum-wide.jpg" alt="White sorghum in a ceramic bowl on jute" loading="lazy"><span class="cc__num">06</span></div>
-            <div class="cc__body">
-              <span class="cc__count">2 products</span><h3>Agricultural Commodities</h3>
-              <div class="cc__group">
-                <h4>Sorghum</h4>
-                <ul><li>Red &amp; White Sorghum</li></ul>
+              <div class="panel__body">
+                <div class="panel__groups">
+                <div class="panel__group">
+                  <h4>Sorghum</h4>
+                  <ul><li>Red &amp; White Sorghum</li></ul>
+                </div>
+                <div class="panel__group">
+                  <h4>Whole Spices</h4>
+                  <ul><li>Bay Leaf</li></ul>
+                </div>
+                </div>
+                <a class="btn btn--primary panel__cta" href="contact.html?product=Agricultural%20Commodities">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
               </div>
-              <div class="cc__group">
-                <h4>Whole Spices</h4>
-                <ul><li>Bay Leaf</li></ul>
-              </div>
-              <a class="cc__link" href="contact.html?product=Agricultural%20Commodities">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
-            </div>
-          </article>
+            </article>
+          </div>
+          <div class="showcase__picks" role="tablist" aria-label="Product categories">
+            <button class="pick" id="tab-malt" type="button" role="tab" aria-controls="cat-malt" aria-selected="true">
+              <span class="pick__img"><img src="assets/img/cat-breakfast.jpg" alt="" loading="lazy"></span>
+              <span class="pick__text"><b>Malt &amp; Breakfast Products</b><small>5 products</small></span>
+            </button>
+            <button class="pick" id="tab-flours" type="button" role="tab" aria-controls="cat-flours" aria-selected="false">
+              <span class="pick__img"><img src="assets/img/moringa-wide.jpg" alt="" loading="lazy"></span>
+              <span class="pick__text"><b>Natural Flours &amp; Powders</b><small>7 products</small></span>
+            </button>
+            <button class="pick" id="tab-dehydrated" type="button" role="tab" aria-controls="cat-dehydrated" aria-selected="false">
+              <span class="pick__img"><div class="cc__art"><svg class="icon"><use href="#i-slices"/></svg></div></span>
+              <span class="pick__text"><b>Dehydrated Products</b><small>1 product</small></span>
+            </button>
+            <button class="pick" id="tab-millets" type="button" role="tab" aria-controls="cat-millets" aria-selected="false">
+              <span class="pick__img"><img src="assets/img/millet-wide.jpg" alt="" loading="lazy"></span>
+              <span class="pick__text"><b>Millets &amp; Ancient Grains</b><small>10 products</small></span>
+            </button>
+            <button class="pick" id="tab-seeds" type="button" role="tab" aria-controls="cat-seeds" aria-selected="false">
+              <span class="pick__img"><div class="cc__art"><svg class="icon"><use href="#i-seeds"/></svg></div></span>
+              <span class="pick__text"><b>Seeds &amp; Superfoods</b><small>5 products</small></span>
+            </button>
+            <button class="pick" id="tab-commodities" type="button" role="tab" aria-controls="cat-commodities" aria-selected="false">
+              <span class="pick__img"><img src="assets/img/sorghum-wide.jpg" alt="" loading="lazy"></span>
+              <span class="pick__text"><b>Agricultural Commodities</b><small>2 products</small></span>
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -179,109 +237,167 @@
           <p>Products explored and sourced according to buyer requirements, specifications and order quantities.</p>
           <p class="cat-meta">6 categories</p>
         </div>
-        <div class="cc-grid">
-          <article class="cc reveal" id="cat-coffee">
-            <div class="cc__media"><div class="cc__art"><svg class="icon"><use href="#i-bean"/></svg></div><span class="cc__num">01</span></div>
-            <div class="cc__body">
-              <h3>Coffee &amp; Coffee Products</h3>
-              <div class="cc__group">
-                <h4>Green Coffee Beans</h4>
-                <ul><li>Arabica</li><li>Robusta</li></ul>
+        <div class="showcase reveal" data-showcase>
+          <div class="showcase__stage">
+            <article class="panel" id="cat-coffee" role="tabpanel" aria-labelledby="tab-coffee" tabindex="0">
+              <div class="panel__banner">
+                <div class="cc__art"><svg class="icon"><use href="#i-bean"/></svg></div>
+                <span class="panel__num">01</span>
+                <div class="panel__title"><span>Sourcing on request</span><h3>Coffee &amp; Coffee Products</h3></div>
               </div>
-              <div class="cc__group">
-                <h4>Roasted Coffee Beans</h4>
-                <ul><li>Arabica</li><li>Robusta</li></ul>
+              <div class="panel__body">
+                <div class="panel__groups">
+                <div class="panel__group">
+                  <h4>Green Coffee Beans</h4>
+                  <ul><li>Arabica</li><li>Robusta</li></ul>
+                </div>
+                <div class="panel__group">
+                  <h4>Roasted Coffee Beans</h4>
+                  <ul><li>Arabica</li><li>Robusta</li></ul>
+                </div>
+                <div class="panel__group">
+                  <h4>Ground Coffee</h4>
+                  <ul><li>Arabica</li><li>Robusta</li></ul>
+                </div>
+                <div class="panel__group">
+                  <h4>Coffee-Chicory Blends</h4>
+                  <ul><li>Different Arabica/Robusta and chicory blend ratios, tailored to buyer specifications</li></ul>
+                </div>
+                </div>
+                <a class="btn btn--primary panel__cta" href="contact.html?product=Coffee%20%26%20Coffee%20Products">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
               </div>
-              <div class="cc__group">
-                <h4>Ground Coffee</h4>
-                <ul><li>Arabica</li><li>Robusta</li></ul>
+            </article>
+            <article class="panel" id="cat-spices" role="tabpanel" aria-labelledby="tab-spices" tabindex="0">
+              <div class="panel__banner">
+                <img src="assets/img/cat-spices.jpg" alt="Sacks and bowls of cardamom, black pepper, chillies and turmeric" loading="lazy">
+                <span class="panel__num">02</span>
+                <div class="panel__title"><span>Sourcing on request</span><h3>Whole Spices</h3></div>
               </div>
-              <div class="cc__group">
-                <h4>Coffee-Chicory Blends</h4>
-                <ul><li>Different Arabica/Robusta and chicory blend ratios, tailored to buyer specifications</li></ul>
+              <div class="panel__body">
+                <div class="panel__groups">
+                <div class="panel__group">
+                  <h4>Cardamom</h4>
+                  <ul><li>Bold</li><li>Medium</li><li>Small</li><li>Different grades and sizes</li></ul>
+                </div>
+                <div class="panel__group">
+                  <h4>Pepper</h4>
+                  <ul><li>Black Pepper</li></ul>
+                </div>
+                <div class="panel__group">
+                  <h4>Other Spices</h4>
+                  <ul><li>Cinnamon</li><li>Mace</li><li>Nutmeg</li><li>Star Anise</li></ul>
+                </div>
+                </div>
+                <a class="btn btn--primary panel__cta" href="contact.html?product=Whole%20Spices">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
               </div>
-              <a class="cc__link" href="contact.html?product=Coffee%20%26%20Coffee%20Products">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
-            </div>
-          </article>
-          <article class="cc reveal" id="cat-spices">
-            <div class="cc__media"><img src="assets/img/cat-spices.jpg" alt="Sacks and bowls of cardamom, black pepper, chillies and turmeric" loading="lazy"><span class="cc__num">02</span></div>
-            <div class="cc__body">
-              <h3>Whole Spices</h3>
-              <div class="cc__group">
-                <h4>Cardamom</h4>
-                <ul><li>Bold</li><li>Medium</li><li>Small</li><li>Different grades and sizes</li></ul>
+            </article>
+            <article class="panel" id="cat-processed" role="tabpanel" aria-labelledby="tab-processed" tabindex="0">
+              <div class="panel__banner">
+                <img src="assets/img/cat-processed.jpg" alt="Dried red chillies in a woven bowl" loading="lazy">
+                <span class="panel__num">03</span>
+                <div class="panel__title"><span>Sourcing on request</span><h3>Processed Agricultural Products</h3></div>
               </div>
-              <div class="cc__group">
-                <h4>Pepper</h4>
-                <ul><li>Black Pepper</li></ul>
+              <div class="panel__body">
+                <div class="panel__groups">
+                <div class="panel__group">
+                  <h4>Root &amp; Tuber Products</h4>
+                  <ul><li>Tapioca Powder</li></ul>
+                </div>
+                <div class="panel__group">
+                  <h4>Dehydrated &amp; Ground Products</h4>
+                  <ul><li>Garlic Powder</li></ul>
+                </div>
+                <div class="panel__group">
+                  <h4>Dried Chilli</h4>
+                  <ul><li>Dried Red Chilli</li></ul>
+                </div>
+                </div>
+                <a class="btn btn--primary panel__cta" href="contact.html?product=Processed%20Agricultural%20Products">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
               </div>
-              <div class="cc__group">
-                <h4>Other Spices</h4>
-                <ul><li>Cinnamon</li><li>Mace</li><li>Nutmeg</li><li>Star Anise</li></ul>
+            </article>
+            <article class="panel" id="cat-rice" role="tabpanel" aria-labelledby="tab-rice" tabindex="0">
+              <div class="panel__banner">
+                <div class="cc__art"><svg class="icon"><use href="#i-bowl"/></svg></div>
+                <span class="panel__num">04</span>
+                <div class="panel__title"><span>Sourcing on request</span><h3>Rice &amp; Grains</h3></div>
               </div>
-              <a class="cc__link" href="contact.html?product=Whole%20Spices">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
-            </div>
-          </article>
-          <article class="cc reveal" id="cat-processed">
-            <div class="cc__media"><img src="assets/img/cat-processed.jpg" alt="Dried red chillies in a woven bowl" loading="lazy"><span class="cc__num">03</span></div>
-            <div class="cc__body">
-              <h3>Processed Agricultural Products</h3>
-              <div class="cc__group">
-                <h4>Root &amp; Tuber Products</h4>
-                <ul><li>Tapioca Powder</li></ul>
+              <div class="panel__body">
+                <div class="panel__groups">
+                <div class="panel__group">
+                  <h4>Rice</h4>
+                  <ul><li>Basmati Rice</li><li>Non-Basmati Rice</li></ul>
+                </div>
+                </div>
+                <a class="btn btn--primary panel__cta" href="contact.html?product=Rice%20%26%20Grains">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
               </div>
-              <div class="cc__group">
-                <h4>Dehydrated &amp; Ground Products</h4>
-                <ul><li>Garlic Powder</li></ul>
+            </article>
+            <article class="panel" id="cat-pulses" role="tabpanel" aria-labelledby="tab-pulses" tabindex="0">
+              <div class="panel__banner">
+                <div class="cc__art"><svg class="icon"><use href="#i-pepper"/></svg></div>
+                <span class="panel__num">05</span>
+                <div class="panel__title"><span>Sourcing on request</span><h3>Pulses &amp; Legumes</h3></div>
               </div>
-              <div class="cc__group">
-                <h4>Dried Chilli</h4>
-                <ul><li>Dried Red Chilli</li></ul>
+              <div class="panel__body">
+                <div class="panel__groups">
+                <div class="panel__group">
+                  <h4>Beans</h4>
+                  <ul><li>Different varieties</li></ul>
+                </div>
+                <div class="panel__group">
+                  <h4>Lentils</h4>
+                  <ul><li>Different varieties</li></ul>
+                </div>
+                <div class="panel__group">
+                  <h4>Peas</h4>
+                  <ul><li>Different varieties</li></ul>
+                </div>
+                </div>
+                <a class="btn btn--primary panel__cta" href="contact.html?product=Pulses%20%26%20Legumes">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
               </div>
-              <a class="cc__link" href="contact.html?product=Processed%20Agricultural%20Products">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
-            </div>
-          </article>
-          <article class="cc reveal" id="cat-rice">
-            <div class="cc__media"><div class="cc__art"><svg class="icon"><use href="#i-bowl"/></svg></div><span class="cc__num">04</span></div>
-            <div class="cc__body">
-              <h3>Rice &amp; Grains</h3>
-              <div class="cc__group">
-                <h4>Rice</h4>
-                <ul><li>Basmati Rice</li><li>Non-Basmati Rice</li></ul>
+            </article>
+            <article class="panel" id="cat-oils" role="tabpanel" aria-labelledby="tab-oils" tabindex="0">
+              <div class="panel__banner">
+                <div class="cc__art"><svg class="icon"><use href="#i-drop"/></svg></div>
+                <span class="panel__num">06</span>
+                <div class="panel__title"><span>Sourcing on request</span><h3>Edible Oils</h3></div>
               </div>
-              <a class="cc__link" href="contact.html?product=Rice%20%26%20Grains">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
-            </div>
-          </article>
-          <article class="cc reveal" id="cat-pulses">
-            <div class="cc__media"><div class="cc__art"><svg class="icon"><use href="#i-pepper"/></svg></div><span class="cc__num">05</span></div>
-            <div class="cc__body">
-              <h3>Pulses &amp; Legumes</h3>
-              <div class="cc__group">
-                <h4>Beans</h4>
-                <ul><li>Different varieties</li></ul>
+              <div class="panel__body">
+                <div class="panel__groups">
+                <div class="panel__group">
+                  <h4>Coconut Products</h4>
+                  <ul><li>Coconut Oil</li></ul>
+                </div>
+                </div>
+                <a class="btn btn--primary panel__cta" href="contact.html?product=Edible%20Oils">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
               </div>
-              <div class="cc__group">
-                <h4>Lentils</h4>
-                <ul><li>Different varieties</li></ul>
-              </div>
-              <div class="cc__group">
-                <h4>Peas</h4>
-                <ul><li>Different varieties</li></ul>
-              </div>
-              <a class="cc__link" href="contact.html?product=Pulses%20%26%20Legumes">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
-            </div>
-          </article>
-          <article class="cc reveal" id="cat-oils">
-            <div class="cc__media"><div class="cc__art"><svg class="icon"><use href="#i-drop"/></svg></div><span class="cc__num">06</span></div>
-            <div class="cc__body">
-              <h3>Edible Oils</h3>
-              <div class="cc__group">
-                <h4>Coconut Products</h4>
-                <ul><li>Coconut Oil</li></ul>
-              </div>
-              <a class="cc__link" href="contact.html?product=Edible%20Oils">Enquire about this category <svg class="icon"><use href="#i-arrow"/></svg></a>
-            </div>
-          </article>
+            </article>
+          </div>
+          <div class="showcase__picks" role="tablist" aria-label="Product categories">
+            <button class="pick" id="tab-coffee" type="button" role="tab" aria-controls="cat-coffee" aria-selected="true">
+              <span class="pick__img"><div class="cc__art"><svg class="icon"><use href="#i-bean"/></svg></div></span>
+              <span class="pick__text"><b>Coffee &amp; Coffee Products</b></span>
+            </button>
+            <button class="pick" id="tab-spices" type="button" role="tab" aria-controls="cat-spices" aria-selected="false">
+              <span class="pick__img"><img src="assets/img/cat-spices.jpg" alt="" loading="lazy"></span>
+              <span class="pick__text"><b>Whole Spices</b></span>
+            </button>
+            <button class="pick" id="tab-processed" type="button" role="tab" aria-controls="cat-processed" aria-selected="false">
+              <span class="pick__img"><img src="assets/img/cat-processed.jpg" alt="" loading="lazy"></span>
+              <span class="pick__text"><b>Processed Agricultural Products</b></span>
+            </button>
+            <button class="pick" id="tab-rice" type="button" role="tab" aria-controls="cat-rice" aria-selected="false">
+              <span class="pick__img"><div class="cc__art"><svg class="icon"><use href="#i-bowl"/></svg></div></span>
+              <span class="pick__text"><b>Rice &amp; Grains</b></span>
+            </button>
+            <button class="pick" id="tab-pulses" type="button" role="tab" aria-controls="cat-pulses" aria-selected="false">
+              <span class="pick__img"><div class="cc__art"><svg class="icon"><use href="#i-pepper"/></svg></div></span>
+              <span class="pick__text"><b>Pulses &amp; Legumes</b></span>
+            </button>
+            <button class="pick" id="tab-oils" type="button" role="tab" aria-controls="cat-oils" aria-selected="false">
+              <span class="pick__img"><div class="cc__art"><svg class="icon"><use href="#i-drop"/></svg></div></span>
+              <span class="pick__text"><b>Edible Oils</b></span>
+            </button>
+          </div>
         </div>
         <p class="range-link reveal"><a class="btn btn--primary" href="contact.html?product=Other%20%2F%20custom%20requirement&amp;type=Ask%20About%20Availability">Ask About Availability <svg class="icon"><use href="#i-arrow"/></svg></a></p>
       </div>

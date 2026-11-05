@@ -120,6 +120,47 @@
     Object.keys(map).forEach(function (id) { so.observe(document.getElementById(id)); });
   }
 
+  /* ---------- Category showcase (products page) ---------- */
+  document.querySelectorAll("[data-showcase]").forEach(function (box) {
+    var tabs = Array.prototype.slice.call(box.querySelectorAll('[role="tab"]'));
+    var stage = box.querySelector(".showcase__stage");
+    var select = function (tab) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+      });
+    };
+    tabs.forEach(function (t, i) {
+      t.addEventListener("click", function () {
+        select(t);
+        // When stacked, the banner sits above the cards, so bring it back into view
+        if (window.matchMedia("(max-width: 960px)").matches) stage.scrollIntoView({ block: "start" });
+      });
+      t.addEventListener("keydown", function (e) {
+        var step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+        if (!step) return;
+        e.preventDefault();
+        var next = tabs[(i + step + tabs.length) % tabs.length];
+        select(next);
+        next.focus();
+      });
+    });
+    select(tabs[0]);
+  });
+
+  // Homepage links such as products.html#cat-coffee open that category
+  var openFromHash = function () {
+    if (!/^#cat-[a-z]+$/.test(window.location.hash)) return;
+    var tab = document.querySelector('[aria-controls="' + window.location.hash.slice(1) + '"]');
+    if (!tab) return;
+    tab.click();
+    tab.closest("[data-showcase]").scrollIntoView({ block: "start" });
+  };
+  window.addEventListener("hashchange", openFromHash);
+  window.addEventListener("load", openFromHash);
+
   /* ---------- Enquiry form ---------- */
   var form = document.getElementById("enquiry-form");
   if (form) {
