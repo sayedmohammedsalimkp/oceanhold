@@ -121,42 +121,79 @@
   }
 
   /* ---------- Category showcase (products page) ---------- */
-  document.querySelectorAll("[data-showcase]").forEach(function (box) {
-    var tabs = Array.prototype.slice.call(box.querySelectorAll('[role="tab"]'));
-    var stage = box.querySelector(".showcase__stage");
-    var select = function (tab) {
-      tabs.forEach(function (t) {
-        var on = t === tab;
-        t.setAttribute("aria-selected", on ? "true" : "false");
-        t.tabIndex = on ? 0 : -1;
-        document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
-      });
-    };
-    tabs.forEach(function (t, i) {
-      t.addEventListener("click", function () {
-        select(t);
-        // When stacked, the banner sits above the cards, so bring it back into view
-        if (window.matchMedia("(max-width: 960px)").matches) stage.scrollIntoView({ block: "start" });
-      });
-      t.addEventListener("keydown", function (e) {
-        var step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
-        if (!step) return;
+  // Each panel has Products / Details tabs
+  var showPane = function (panel, index) {
+    panel.querySelectorAll(".ptab").forEach(function (tab, i) {
+      var on = i === index;
+      tab.setAttribute("aria-selected", on ? "true" : "false");
+      tab.tabIndex = on ? 0 : -1;
+      document.getElementById(tab.getAttribute("aria-controls")).hidden = !on;
+    });
+  };
+  document.querySelectorAll(".panel").forEach(function (panel) {
+    var tabs = panel.querySelectorAll(".ptab");
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener("click", function () { showPane(panel, i); });
+      tab.addEventListener("keydown", function (e) {
+        if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
         e.preventDefault();
-        var next = tabs[(i + step + tabs.length) % tabs.length];
-        select(next);
-        next.focus();
+        var next = i === 0 ? 1 : 0;
+        showPane(panel, next);
+        tabs[next].focus();
       });
     });
-    select(tabs[0]);
+    showPane(panel, 0);
+  });
+
+  document.querySelectorAll("[data-showcase]").forEach(function (box) {
+    var picks = Array.prototype.slice.call(box.querySelectorAll(".pick"));
+    var select = function (pick) {
+      picks.forEach(function (p) {
+        var on = p === pick;
+        p.setAttribute("aria-expanded", on ? "true" : "false");
+        var panel = document.getElementById(p.getAttribute("aria-controls"));
+        panel.hidden = !on;
+        if (on) showPane(panel, 0);
+      });
+      box.classList.toggle("is-open", !!pick);
+    };
+    picks.forEach(function (p) {
+      p.addEventListener("click", function () {
+        var open = p.getAttribute("aria-expanded") === "true";
+        select(open ? null : p);
+        if (!open) {
+          p.scrollIntoView({ block: "nearest", inline: "center" });
+          box.scrollIntoView({ block: "start" });
+        }
+      });
+    });
+    box.querySelectorAll(".panel__close").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var opener = box.querySelector('.pick[aria-expanded="true"]');
+        select(null);
+        if (opener) opener.focus();
+      });
+    });
+    // Previous / next arrows loop through the categories
+    var step = function (by) {
+      var current = picks.indexOf(box.querySelector('.pick[aria-expanded="true"]'));
+      var next = picks[(current + by + picks.length) % picks.length];
+      var strip = next.parentNode;
+      select(next);
+      strip.scrollLeft = next.offsetLeft - strip.offsetLeft - (strip.clientWidth - next.offsetWidth) / 2;
+    };
+    box.querySelector(".panel__nav--prev").addEventListener("click", function () { step(-1); });
+    box.querySelector(".panel__nav--next").addEventListener("click", function () { step(1); });
+    select(null);
   });
 
   // Homepage links such as products.html#cat-coffee open that category
   var openFromHash = function () {
     if (!/^#cat-[a-z]+$/.test(window.location.hash)) return;
-    var tab = document.querySelector('[aria-controls="' + window.location.hash.slice(1) + '"]');
-    if (!tab) return;
-    tab.click();
-    tab.closest("[data-showcase]").scrollIntoView({ block: "start" });
+    var pick = document.querySelector('.pick[aria-controls="' + window.location.hash.slice(1) + '"]');
+    if (!pick) return;
+    if (pick.getAttribute("aria-expanded") === "true") pick.closest("[data-showcase]").scrollIntoView({ block: "start" });
+    else pick.click();
   };
   window.addEventListener("hashchange", openFromHash);
   window.addEventListener("load", openFromHash);
