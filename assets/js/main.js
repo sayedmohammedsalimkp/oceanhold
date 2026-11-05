@@ -121,13 +121,38 @@
   }
 
   /* ---------- Category showcase (products page) ---------- */
+  // The first product is selected when a category opens; selecting another swaps the details
+  var showItem = function (panel, index) {
+    panel.querySelectorAll(".pitem").forEach(function (b, i) {
+      b.setAttribute("aria-pressed", i === index ? "true" : "false");
+    });
+    panel.querySelectorAll(".pabout__item").forEach(function (d, i) {
+      d.classList.toggle("is-on", i === index);
+    });
+    var name = panel.querySelectorAll(".pitem")[index].textContent;
+    panel.querySelectorAll(".btn-row a").forEach(function (a) {
+      if (!a.dataset.base) a.dataset.base = a.getAttribute("href");
+      a.setAttribute("href", a.dataset.base + "&item=" + encodeURIComponent(name));
+    });
+  };
+  document.querySelectorAll(".panel").forEach(function (panel) {
+    panel.querySelectorAll(".pitem").forEach(function (b, i) {
+      b.addEventListener("click", function () {
+        showItem(panel, i);
+        if (window.matchMedia("(max-width: 960px)").matches) panel.querySelector(".pabout").scrollIntoView({ block: "nearest" });
+      });
+    });
+  });
+
   document.querySelectorAll("[data-showcase]").forEach(function (box) {
     var picks = Array.prototype.slice.call(box.querySelectorAll(".pick"));
     var select = function (pick) {
       picks.forEach(function (p) {
         var on = p === pick;
         p.setAttribute("aria-expanded", on ? "true" : "false");
-        document.getElementById(p.getAttribute("aria-controls")).hidden = !on;
+        var panel = document.getElementById(p.getAttribute("aria-controls"));
+        panel.hidden = !on;
+        if (on) showItem(panel, 0);
       });
       box.classList.toggle("is-open", !!pick);
     };
@@ -184,6 +209,9 @@
         if (o.value === product) sel.value = product;
       });
     }
+
+    var chosenItem = params.get("item");
+    if (chosenItem) form.querySelector("#message").value = "Product: " + chosenItem + "\n";
 
     var typeInput = form.querySelector("#enquiry-type");
     var chips = document.querySelectorAll(".quick-ctas button");

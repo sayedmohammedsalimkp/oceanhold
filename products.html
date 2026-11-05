@@ -70,7 +70,7 @@
         <div class="showcase reveal" data-showcase>
           <div class="showcase__picks" role="group" aria-label="Established Sourcing Network categories">
             <button class="pick" id="tab-malt" type="button" aria-controls="cat-malt" aria-expanded="false">
-              <span class="pick__img"><img src="assets/img/cat-breakfast.jpg" alt="" loading="lazy"></span>
+              <span class="pick__img"><img src="assets/img/cat-malt.jpg" alt="" loading="lazy"></span>
               <span class="pick__text"><b>Malt &amp; Breakfast Products</b><small>5 products</small></span>
             </button>
             <button class="pick" id="tab-flours" type="button" aria-controls="cat-flours" aria-expanded="false">
@@ -78,7 +78,7 @@
               <span class="pick__text"><b>Natural Flours &amp; Powders</b><small>7 products</small></span>
             </button>
             <button class="pick" id="tab-dehydrated" type="button" aria-controls="cat-dehydrated" aria-expanded="false">
-              <span class="pick__img"><div class="cc__art"><svg class="icon"><use href="#i-slices"/></svg></div></span>
+              <span class="pick__img"><img src="assets/img/cat-dehydrated.jpg" alt="" loading="lazy"></span>
               <span class="pick__text"><b>Dehydrated Products</b><small>1 product</small></span>
             </button>
             <button class="pick" id="tab-millets" type="button" aria-controls="cat-millets" aria-expanded="false">
@@ -86,7 +86,7 @@
               <span class="pick__text"><b>Millets &amp; Ancient Grains</b><small>10 products</small></span>
             </button>
             <button class="pick" id="tab-seeds" type="button" aria-controls="cat-seeds" aria-expanded="false">
-              <span class="pick__img"><div class="cc__art"><svg class="icon"><use href="#i-seeds"/></svg></div></span>
+              <span class="pick__img"><img src="assets/img/cat-seeds.jpg" alt="" loading="lazy"></span>
               <span class="pick__text"><b>Seeds &amp; Superfoods</b><small>5 products</small></span>
             </button>
             <button class="pick" id="tab-commodities" type="button" aria-controls="cat-commodities" aria-expanded="false">
@@ -100,41 +100,52 @@
             <button class="panel__nav panel__nav--next" type="button" aria-label="Next category"><svg class="icon"><use href="#i-arrow"/></svg></button>
             <article class="panel" id="cat-malt">
               <button class="panel__close" type="button" aria-label="Close Malt &amp; Breakfast Products">&times;</button>
-              <div class="panel__media"><img src="assets/img/cat-breakfast.jpg" alt="A bowl of breakfast porridge with fruit" loading="lazy"><span class="panel__num">01</span></div>
+              <div class="panel__media"><img src="assets/img/cat-malt.jpg" alt="Malt powder in a wooden bowl" loading="lazy"><span class="panel__num">01</span></div>
               <div class="panel__info">
                 <span class="eyebrow">Established Sourcing Network</span>
                 <h3 class="panel__name">Malt &amp; Breakfast Products</h3>
-                <p class="panel__sub">Malts, muesli and breakfast ingredients</p>
-                <p class="lead">ABC, beetroot and carrot malts, plus ragi and millet muesli.</p>
-                <div class="attr-row"><span class="attr"><svg class="icon"><use href="#i-box"/></svg>5 products</span><span class="attr"><svg class="icon"><use href="#i-pin"/></svg>Sourced from India</span><span class="attr"><svg class="icon"><use href="#i-box"/></svg>Bulk &amp; custom packaging</span><span class="attr"><svg class="icon"><use href="#i-doc-check"/></svg>Specifications on request</span></div>
-                <div class="uses">
+                <div class="plist">
                   <h4>Products in this category</h4>
                   <ul>
-                    <li>ABC Malt</li>
-                    <li>Beetroot Malt</li>
-                    <li>Carrot Malt</li>
-                    <li>Ragi Muesli</li>
-                    <li>Millet Muesli</li>
+                    <li><button class="pitem" type="button" aria-pressed="false">ABC Malt</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Beetroot Malt</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Carrot Malt</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Ragi Muesli</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Millet Muesli</button></li>
                   </ul>
                 </div>
-                <div class="uses">
-                  <h4>Widely used in</h4>
-                  <ul>
-                    <li>Malted health drinks</li>
-                    <li>Breakfast cereals</li>
-                    <li>Health food retail</li>
-                    <li>Private label brands</li>
-                  </ul>
+                <div class="pabout" aria-live="polite">
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>ABC Malt</h5>
+                    <p>A ready-to-mix malt product sold as ABC Malt. Ingredients and composition are shared on request.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Beetroot Malt</h5>
+                    <p>A malt-based drink mix made with beetroot, for health drink and retail ranges.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Carrot Malt</h5>
+                    <p>A malt-based drink mix made with carrot, for health drink and retail ranges.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Ragi Muesli</h5>
+                    <p>Breakfast muesli made with ragi (finger millet), for cereal and health food ranges.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Millet Muesli</h5>
+                    <p>Breakfast muesli based on millets, for cereal and health food ranges.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
                 </div>
-                <table class="spec-table">
-                  <tr><th>Origin</th><td>India</td></tr>
-                  <tr><th>Grade / specification</th><td>Shared on request, per buyer requirement</td></tr>
-                  <tr><th>Quality documents</th><td>COA and test reports arranged per requirement</td></tr>
-                  <tr><th>Packaging</th><td>Bulk, woven PP bags, pouches or private label</td></tr>
-                  <tr><th>Availability</th><td>Confirmed on enquiry; may vary by season</td></tr>
-                  <tr><th>MOQ</th><td>Confirmed on enquiry</td></tr>
-                </table>
-
                 <div class="btn-row">
                   <a class="btn btn--primary" href="contact.html?product=Malt%20%26%20Breakfast%20Products">Request a Quote <svg class="icon"><use href="#i-arrow"/></svg></a>
                   <a class="btn btn--outline" href="contact.html?product=Malt%20%26%20Breakfast%20Products&amp;type=Request%20Product%20Specifications">Request Specifications</a>
@@ -147,39 +158,62 @@
               <div class="panel__info">
                 <span class="eyebrow">Established Sourcing Network</span>
                 <h3 class="panel__name">Natural Flours &amp; Powders</h3>
-                <p class="panel__sub">Root, tuber, fruit, millet and leaf powders</p>
-                <p class="lead">Root, tuber, fruit, millet and leaf powders, including moringa.</p>
-                <div class="attr-row"><span class="attr"><svg class="icon"><use href="#i-box"/></svg>7 products</span><span class="attr"><svg class="icon"><use href="#i-pin"/></svg>Sourced from India</span><span class="attr"><svg class="icon"><use href="#i-box"/></svg>Bulk &amp; custom packaging</span><span class="attr"><svg class="icon"><use href="#i-doc-check"/></svg>Specifications on request</span></div>
-                <div class="uses">
+                <div class="plist">
                   <h4>Products in this category</h4>
                   <ul>
-                    <li>Kannankaya Powder</li>
-                    <li>Arrowroot Powder</li>
-                    <li>Sweet Potato Powder</li>
-                    <li>Jackfruit Powder</li>
-                    <li>Natural Dried Dates Powder (Premium Khajoor)</li>
-                    <li>Sprouted Ragi Powder</li>
-                    <li>Moringa Leaf Powder</li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Kannankaya Powder</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Arrowroot Powder</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Sweet Potato Powder</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Jackfruit Powder</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Natural Dried Dates Powder</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Sprouted Ragi Powder</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Moringa Leaf Powder</button></li>
                   </ul>
                 </div>
-                <div class="uses">
-                  <h4>Widely used in</h4>
-                  <ul>
-                    <li>Bakery &amp; food products</li>
-                    <li>Functional foods</li>
-                    <li>Nutraceuticals</li>
-                    <li>Porridges &amp; health drinks</li>
-                  </ul>
+                <div class="pabout" aria-live="polite">
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Kannankaya Powder</h5>
+                    <p>Kannankaya dried and milled into a fine powder, for use as a food ingredient.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Arrowroot Powder</h5>
+                    <p>A fine starch powder from the arrowroot plant, used as a thickener and in bakery and food products.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Sweet Potato Powder</h5>
+                    <p>Dried sweet potato milled into powder, for bakery mixes, soups and snack foods.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Jackfruit Powder</h5>
+                    <p>Dried jackfruit milled into powder, for flour blends, bakery and food products.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Natural Dried Dates Powder</h5>
+                    <p>Natural dried dates ground into powder, for use as a sweetening ingredient in foods and drinks.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Sprouted Ragi Powder</h5>
+                    <p>Finger millet that has been sprouted, dried and milled, for porridges, malts and health foods.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Moringa Leaf Powder</h5>
+                    <p>Powder made from dried Moringa oleifera leaves, for food, wellness and nutraceutical products.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
                 </div>
-                <table class="spec-table">
-                  <tr><th>Origin</th><td>India</td></tr>
-                  <tr><th>Grade / specification</th><td>Shared on request, per buyer requirement</td></tr>
-                  <tr><th>Quality documents</th><td>COA and test reports arranged per requirement</td></tr>
-                  <tr><th>Packaging</th><td>Bulk, woven PP bags, pouches or private label</td></tr>
-                  <tr><th>Availability</th><td>Confirmed on enquiry; may vary by season</td></tr>
-                  <tr><th>MOQ</th><td>Confirmed on enquiry</td></tr>
-                </table>
-
                 <div class="btn-row">
                   <a class="btn btn--primary" href="contact.html?product=Natural%20Flours%20%26%20Powders">Request a Quote <svg class="icon"><use href="#i-arrow"/></svg></a>
                   <a class="btn btn--outline" href="contact.html?product=Natural%20Flours%20%26%20Powders&amp;type=Request%20Product%20Specifications">Request Specifications</a>
@@ -188,37 +222,24 @@
             </article>
             <article class="panel" id="cat-dehydrated">
               <button class="panel__close" type="button" aria-label="Close Dehydrated Products">&times;</button>
-              <div class="panel__media"><div class="cc__art"><svg class="icon"><use href="#i-slices"/></svg></div><span class="panel__num">03</span></div>
+              <div class="panel__media"><img src="assets/img/cat-dehydrated.jpg" alt="Dehydrated Kannankaya slices in a white bowl" loading="lazy"><span class="panel__num">03</span></div>
               <div class="panel__info">
                 <span class="eyebrow">Established Sourcing Network</span>
                 <h3 class="panel__name">Dehydrated Products</h3>
-                <p class="panel__sub">Dried vegetables and tubers</p>
-                <p class="lead">Dehydrated Kannankaya slices.</p>
-                <div class="attr-row"><span class="attr"><svg class="icon"><use href="#i-box"/></svg>1 product</span><span class="attr"><svg class="icon"><use href="#i-pin"/></svg>Sourced from India</span><span class="attr"><svg class="icon"><use href="#i-box"/></svg>Bulk &amp; custom packaging</span><span class="attr"><svg class="icon"><use href="#i-doc-check"/></svg>Specifications on request</span></div>
-                <div class="uses">
+                <div class="plist">
                   <h4>Products in this category</h4>
                   <ul>
-                    <li>Dehydrated Kannankaya Slices</li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Dehydrated Kannankaya Slices</button></li>
                   </ul>
                 </div>
-                <div class="uses">
-                  <h4>Widely used in</h4>
-                  <ul>
-                    <li>Snack foods</li>
-                    <li>Flour milling</li>
-                    <li>Ready-to-cook mixes</li>
-                    <li>Food processing industries</li>
-                  </ul>
+                <div class="pabout" aria-live="polite">
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Dehydrated Kannankaya Slices</h5>
+                    <p>Kannankaya cut into slices and dehydrated, for snacks, milling and ready-to-cook products.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
                 </div>
-                <table class="spec-table">
-                  <tr><th>Origin</th><td>India</td></tr>
-                  <tr><th>Grade / specification</th><td>Shared on request, per buyer requirement</td></tr>
-                  <tr><th>Quality documents</th><td>COA and test reports arranged per requirement</td></tr>
-                  <tr><th>Packaging</th><td>Bulk, woven PP bags, pouches or private label</td></tr>
-                  <tr><th>Availability</th><td>Confirmed on enquiry; may vary by season</td></tr>
-                  <tr><th>MOQ</th><td>Confirmed on enquiry</td></tr>
-                </table>
-
                 <div class="btn-row">
                   <a class="btn btn--primary" href="contact.html?product=Dehydrated%20Products">Request a Quote <svg class="icon"><use href="#i-arrow"/></svg></a>
                   <a class="btn btn--outline" href="contact.html?product=Dehydrated%20Products&amp;type=Request%20Product%20Specifications">Request Specifications</a>
@@ -231,44 +252,83 @@
               <div class="panel__info">
                 <span class="eyebrow">Established Sourcing Network</span>
                 <h3 class="panel__name">Millets &amp; Ancient Grains</h3>
-                <p class="panel__sub">Small millets, traditional millets and ancient grains</p>
-                <p class="lead">Small millets, finger millet and white, black and red quinoa.</p>
-                <div class="attr-row"><span class="attr"><svg class="icon"><use href="#i-box"/></svg>10 products</span><span class="attr"><svg class="icon"><use href="#i-pin"/></svg>Sourced from India</span><span class="attr"><svg class="icon"><use href="#i-box"/></svg>Bulk &amp; custom packaging</span><span class="attr"><svg class="icon"><use href="#i-doc-check"/></svg>Specifications on request</span></div>
-                <div class="uses">
+                <div class="plist">
                   <h4>Products in this category</h4>
                   <ul>
-                    <li>Foxtail Millet</li>
-                    <li>Kodo Millet</li>
-                    <li>Proso Millet</li>
-                    <li>Browntop Millet</li>
-                    <li>Barnyard Millet</li>
-                    <li>Little Millet</li>
-                    <li>Finger Millet</li>
-                    <li>White Quinoa</li>
-                    <li>Black Quinoa</li>
-                    <li>Red Quinoa</li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Foxtail Millet</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Kodo Millet</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Proso Millet</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Browntop Millet</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Barnyard Millet</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Little Millet</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Finger Millet</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">White Quinoa</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Black Quinoa</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Red Quinoa</button></li>
                   </ul>
                 </div>
-                <div class="uses">
-                  <h4>Widely used in</h4>
-                  <ul>
-                    <li>Flour milling</li>
-                    <li>Breakfast cereals &amp; porridges</li>
-                    <li>Bakery products</li>
-                    <li>Snacks &amp; extruded foods</li>
-                    <li>Ready meals</li>
-                    <li>Food processing industries</li>
-                  </ul>
+                <div class="pabout" aria-live="polite">
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Foxtail Millet</h5>
+                    <p>A small-grained millet (Setaria italica), used in flours, porridges, snacks and rice-style dishes.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Kodo Millet</h5>
+                    <p>A small-grained millet (Paspalum scrobiculatum), used in flours, porridges and rice-style dishes.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Proso Millet</h5>
+                    <p>A small-grained millet (Panicum miliaceum), used in flours, cereals and bakery products.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Browntop Millet</h5>
+                    <p>A small-grained millet (Brachiaria ramosa), used in porridges, flours and rice-style dishes.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Barnyard Millet</h5>
+                    <p>A small-grained millet (Echinochloa species), used in porridges, flours and rice-style dishes.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Little Millet</h5>
+                    <p>A small-grained millet (Panicum sumatrense), used in porridge, flour, bakery products and ready meals.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Finger Millet</h5>
+                    <p>Also known as ragi (Eleusine coracana), a reddish-brown grain used in flours, porridges, bakery and infant food products.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>White Quinoa</h5>
+                    <p>Pale quinoa grains (Chenopodium quinoa), used in cereals, salads, flours and ready meals.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Black Quinoa</h5>
+                    <p>Dark quinoa grains (Chenopodium quinoa) with a firmer bite, used in salads, cereals and ready meals.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Red Quinoa</h5>
+                    <p>Red quinoa grains (Chenopodium quinoa) that hold their shape when cooked, used in salads and ready meals.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
                 </div>
-                <table class="spec-table">
-                  <tr><th>Origin</th><td>India</td></tr>
-                  <tr><th>Grade / specification</th><td>Shared on request, per buyer requirement</td></tr>
-                  <tr><th>Quality documents</th><td>COA and test reports arranged per requirement</td></tr>
-                  <tr><th>Packaging</th><td>Bulk, woven PP bags, pouches or private label</td></tr>
-                  <tr><th>Availability</th><td>Confirmed on enquiry; may vary by season</td></tr>
-                  <tr><th>MOQ</th><td>Confirmed on enquiry</td></tr>
-                </table>
-
                 <div class="btn-row">
                   <a class="btn btn--primary" href="contact.html?product=Millets%20%26%20Ancient%20Grains">Request a Quote <svg class="icon"><use href="#i-arrow"/></svg></a>
                   <a class="btn btn--outline" href="contact.html?product=Millets%20%26%20Ancient%20Grains&amp;type=Request%20Product%20Specifications">Request Specifications</a>
@@ -277,41 +337,52 @@
             </article>
             <article class="panel" id="cat-seeds">
               <button class="panel__close" type="button" aria-label="Close Seeds &amp; Superfoods">&times;</button>
-              <div class="panel__media"><div class="cc__art"><svg class="icon"><use href="#i-seeds"/></svg></div><span class="panel__num">05</span></div>
+              <div class="panel__media"><img src="assets/img/cat-seeds.jpg" alt="White chia seeds in a bowl with a wooden scoop" loading="lazy"><span class="panel__num">05</span></div>
               <div class="panel__info">
                 <span class="eyebrow">Established Sourcing Network</span>
                 <h3 class="panel__name">Seeds &amp; Superfoods</h3>
-                <p class="panel__sub">Edible seeds for food and wellness</p>
-                <p class="lead">Chia, flax, pumpkin, sunflower and basil seeds.</p>
-                <div class="attr-row"><span class="attr"><svg class="icon"><use href="#i-box"/></svg>5 products</span><span class="attr"><svg class="icon"><use href="#i-pin"/></svg>Sourced from India</span><span class="attr"><svg class="icon"><use href="#i-box"/></svg>Bulk &amp; custom packaging</span><span class="attr"><svg class="icon"><use href="#i-doc-check"/></svg>Specifications on request</span></div>
-                <div class="uses">
+                <div class="plist">
                   <h4>Products in this category</h4>
                   <ul>
-                    <li>White Chia Seeds</li>
-                    <li>Flax Seeds</li>
-                    <li>Pumpkin Seeds</li>
-                    <li>Sunflower Seeds</li>
-                    <li>Basil Seeds</li>
+                    <li><button class="pitem" type="button" aria-pressed="false">White Chia Seeds</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Flax Seeds</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Pumpkin Seeds</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Sunflower Seeds</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Basil Seeds</button></li>
                   </ul>
                 </div>
-                <div class="uses">
-                  <h4>Widely used in</h4>
-                  <ul>
-                    <li>Bakery toppings</li>
-                    <li>Muesli &amp; granola</li>
-                    <li>Snack mixes</li>
-                    <li>Health food retail</li>
-                  </ul>
+                <div class="pabout" aria-live="polite">
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>White Chia Seeds</h5>
+                    <p>Pale chia seeds (Salvia hispanica), used in bakery, drinks, breakfast and snack products.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Flax Seeds</h5>
+                    <p>Also known as linseed (Linum usitatissimum), used whole or milled in bakery, cereals and snack products.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Pumpkin Seeds</h5>
+                    <p>Green pumpkin seeds for snack mixes, bakery toppings and breakfast products.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Sunflower Seeds</h5>
+                    <p>Sunflower seeds for snack mixes, bakery toppings and breakfast products.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Basil Seeds</h5>
+                    <p>Small black seeds, also known as sabja, used in drinks and desserts.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
                 </div>
-                <table class="spec-table">
-                  <tr><th>Origin</th><td>India</td></tr>
-                  <tr><th>Grade / specification</th><td>Shared on request, per buyer requirement</td></tr>
-                  <tr><th>Quality documents</th><td>COA and test reports arranged per requirement</td></tr>
-                  <tr><th>Packaging</th><td>Bulk, woven PP bags, pouches or private label</td></tr>
-                  <tr><th>Availability</th><td>Confirmed on enquiry; may vary by season</td></tr>
-                  <tr><th>MOQ</th><td>Confirmed on enquiry</td></tr>
-                </table>
-
                 <div class="btn-row">
                   <a class="btn btn--primary" href="contact.html?product=Seeds%20%26%20Superfoods">Request a Quote <svg class="icon"><use href="#i-arrow"/></svg></a>
                   <a class="btn btn--outline" href="contact.html?product=Seeds%20%26%20Superfoods&amp;type=Request%20Product%20Specifications">Request Specifications</a>
@@ -324,34 +395,27 @@
               <div class="panel__info">
                 <span class="eyebrow">Established Sourcing Network</span>
                 <h3 class="panel__name">Agricultural Commodities</h3>
-                <p class="panel__sub">Sorghum and whole spices</p>
-                <p class="lead">Red and white sorghum, and bay leaf.</p>
-                <div class="attr-row"><span class="attr"><svg class="icon"><use href="#i-box"/></svg>2 products</span><span class="attr"><svg class="icon"><use href="#i-pin"/></svg>Sourced from India</span><span class="attr"><svg class="icon"><use href="#i-box"/></svg>Bulk &amp; custom packaging</span><span class="attr"><svg class="icon"><use href="#i-doc-check"/></svg>Specifications on request</span></div>
-                <div class="uses">
+                <div class="plist">
                   <h4>Products in this category</h4>
                   <ul>
-                    <li>Red &amp; White Sorghum</li>
-                    <li>Bay Leaf</li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Red &amp; White Sorghum</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Bay Leaf</button></li>
                   </ul>
                 </div>
-                <div class="uses">
-                  <h4>Widely used in</h4>
-                  <ul>
-                    <li>Flour milling</li>
-                    <li>Breakfast cereals</li>
-                    <li>Snacks &amp; extruded foods</li>
-                    <li>Seasonings &amp; spice blends</li>
-                  </ul>
+                <div class="pabout" aria-live="polite">
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Red &amp; White Sorghum</h5>
+                    <p>Also known as jowar (Sorghum bicolor), available in red and white, used in flour milling, breakfast cereals, snacks and food processing.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Bay Leaf</h5>
+                    <p>Dried aromatic leaves used as a whole spice in cooking and seasoning blends.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
                 </div>
-                <table class="spec-table">
-                  <tr><th>Origin</th><td>India</td></tr>
-                  <tr><th>Grade / specification</th><td>Shared on request, per buyer requirement</td></tr>
-                  <tr><th>Quality documents</th><td>COA and test reports arranged per requirement</td></tr>
-                  <tr><th>Packaging</th><td>Bulk, woven PP bags, pouches or private label</td></tr>
-                  <tr><th>Availability</th><td>Confirmed on enquiry; may vary by season</td></tr>
-                  <tr><th>MOQ</th><td>Confirmed on enquiry</td></tr>
-                </table>
-
                 <div class="btn-row">
                   <a class="btn btn--primary" href="contact.html?product=Agricultural%20Commodities">Request a Quote <svg class="icon"><use href="#i-arrow"/></svg></a>
                   <a class="btn btn--outline" href="contact.html?product=Agricultural%20Commodities&amp;type=Request%20Product%20Specifications">Request Specifications</a>
@@ -375,7 +439,7 @@
         <div class="showcase reveal" data-showcase>
           <div class="showcase__picks" role="group" aria-label="Sourcing on Request categories">
             <button class="pick" id="tab-coffee" type="button" aria-controls="cat-coffee" aria-expanded="false">
-              <span class="pick__img"><div class="cc__art"><svg class="icon"><use href="#i-bean"/></svg></div></span>
+              <span class="pick__img"><img src="assets/img/cat-coffee.jpg" alt="" loading="lazy"></span>
               <span class="pick__text"><b>Coffee &amp; Coffee Products</b></span>
             </button>
             <button class="pick" id="tab-spices" type="button" aria-controls="cat-spices" aria-expanded="false">
@@ -405,40 +469,45 @@
             <button class="panel__nav panel__nav--next" type="button" aria-label="Next category"><svg class="icon"><use href="#i-arrow"/></svg></button>
             <article class="panel" id="cat-coffee">
               <button class="panel__close" type="button" aria-label="Close Coffee &amp; Coffee Products">&times;</button>
-              <div class="panel__media"><div class="cc__art"><svg class="icon"><use href="#i-bean"/></svg></div><span class="panel__num">01</span></div>
+              <div class="panel__media"><img src="assets/img/cat-coffee.jpg" alt="Roasted coffee beans in a cream bowl" loading="lazy"><span class="panel__num">01</span></div>
               <div class="panel__info">
                 <span class="eyebrow">Sourcing on Request</span>
                 <h3 class="panel__name">Coffee &amp; Coffee Products</h3>
-                <p class="panel__sub">Green, roasted and ground coffee</p>
-                <p class="lead">Green and roasted Arabica and Robusta beans, ground coffee and coffee-chicory blends.</p>
-                <div class="attr-row"><span class="attr"><svg class="icon"><use href="#i-pin"/></svg>Sourced from India</span><span class="attr"><svg class="icon"><use href="#i-box"/></svg>Bulk &amp; custom packaging</span><span class="attr"><svg class="icon"><use href="#i-doc-check"/></svg>Specifications on request</span></div>
-                <div class="uses">
+                <div class="plist">
                   <h4>Products in this category</h4>
                   <ul>
-                    <li>Green Coffee Beans: Arabica, Robusta</li>
-                    <li>Roasted Coffee Beans: Arabica, Robusta</li>
-                    <li>Ground Coffee: Arabica, Robusta</li>
-                    <li>Coffee-Chicory Blends: different ratios, to buyer specification</li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Green Coffee Beans</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Roasted Coffee Beans</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Ground Coffee</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Coffee-Chicory Blends</button></li>
                   </ul>
                 </div>
-                <div class="uses">
-                  <h4>Widely used in</h4>
-                  <ul>
-                    <li>Coffee roasters</li>
-                    <li>Retail coffee brands</li>
-                    <li>Cafés &amp; food service</li>
-                    <li>Filter coffee blends</li>
-                  </ul>
+                <div class="pabout" aria-live="polite">
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Green Coffee Beans</h5>
+                    <p>Unroasted Arabica and Robusta beans, for roasters and coffee brands. Available in different grades.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Roasted Coffee Beans</h5>
+                    <p>Roasted Arabica and Robusta beans, for retail brands and food service. Available in different grades.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Ground Coffee</h5>
+                    <p>Ground Arabica and Robusta coffee, for retail brands and food service.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Coffee-Chicory Blends</h5>
+                    <p>Arabica or Robusta coffee blended with chicory, in different ratios tailored to buyer specification.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
                 </div>
-                <table class="spec-table">
-                  <tr><th>Origin</th><td>India</td></tr>
-                  <tr><th>Grade / specification</th><td>Shared on request, per buyer requirement</td></tr>
-                  <tr><th>Quality documents</th><td>COA and test reports arranged per requirement</td></tr>
-                  <tr><th>Packaging</th><td>Bulk, woven PP bags, pouches or private label</td></tr>
-                  <tr><th>Availability</th><td>Confirmed on enquiry; may vary by season</td></tr>
-                  <tr><th>MOQ</th><td>Confirmed on enquiry</td></tr>
-                </table>
-
                 <div class="btn-row">
                   <a class="btn btn--primary" href="contact.html?product=Coffee%20%26%20Coffee%20Products">Request a Quote <svg class="icon"><use href="#i-arrow"/></svg></a>
                   <a class="btn btn--outline" href="contact.html?product=Coffee%20%26%20Coffee%20Products&amp;type=Request%20Product%20Specifications">Request Specifications</a>
@@ -451,38 +520,55 @@
               <div class="panel__info">
                 <span class="eyebrow">Sourcing on Request</span>
                 <h3 class="panel__name">Whole Spices</h3>
-                <p class="panel__sub">Whole spices from India</p>
-                <p class="lead">Cardamom in bold, medium and small grades, black pepper, cinnamon, mace, nutmeg and star anise.</p>
-                <div class="attr-row"><span class="attr"><svg class="icon"><use href="#i-pin"/></svg>Sourced from India</span><span class="attr"><svg class="icon"><use href="#i-box"/></svg>Bulk &amp; custom packaging</span><span class="attr"><svg class="icon"><use href="#i-doc-check"/></svg>Specifications on request</span></div>
-                <div class="uses">
+                <div class="plist">
                   <h4>Products in this category</h4>
                   <ul>
-                    <li>Cardamom: Bold, Medium, Small, in different grades and sizes</li>
-                    <li>Black Pepper</li>
-                    <li>Cinnamon</li>
-                    <li>Mace</li>
-                    <li>Nutmeg</li>
-                    <li>Star Anise</li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Cardamom</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Black Pepper</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Cinnamon</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Mace</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Nutmeg</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Star Anise</button></li>
                   </ul>
                 </div>
-                <div class="uses">
-                  <h4>Widely used in</h4>
-                  <ul>
-                    <li>Spice blends</li>
-                    <li>Food manufacturing</li>
-                    <li>Retail packs</li>
-                    <li>Food service</li>
-                  </ul>
+                <div class="pabout" aria-live="polite">
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Cardamom</h5>
+                    <p>Green cardamom pods in bold, medium and small sizes, available in different grades.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Black Pepper</h5>
+                    <p>Whole dried peppercorns (Piper nigrum), used in cooking, seasoning blends and food manufacturing.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Cinnamon</h5>
+                    <p>Dried aromatic bark used as a whole spice in cooking, baking and spice blends.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Mace</h5>
+                    <p>The dried outer covering of the nutmeg seed, used as a whole spice in cooking and spice blends.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Nutmeg</h5>
+                    <p>The dried seed of the nutmeg tree, used in cooking, baking and spice blends.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Star Anise</h5>
+                    <p>Star-shaped dried fruit with a sweet, aromatic flavour, used in cooking and spice blends.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
                 </div>
-                <table class="spec-table">
-                  <tr><th>Origin</th><td>India</td></tr>
-                  <tr><th>Grade / specification</th><td>Shared on request, per buyer requirement</td></tr>
-                  <tr><th>Quality documents</th><td>COA and test reports arranged per requirement</td></tr>
-                  <tr><th>Packaging</th><td>Bulk, woven PP bags, pouches or private label</td></tr>
-                  <tr><th>Availability</th><td>Confirmed on enquiry; may vary by season</td></tr>
-                  <tr><th>MOQ</th><td>Confirmed on enquiry</td></tr>
-                </table>
-
                 <div class="btn-row">
                   <a class="btn btn--primary" href="contact.html?product=Whole%20Spices">Request a Quote <svg class="icon"><use href="#i-arrow"/></svg></a>
                   <a class="btn btn--outline" href="contact.html?product=Whole%20Spices&amp;type=Request%20Product%20Specifications">Request Specifications</a>
@@ -495,35 +581,34 @@
               <div class="panel__info">
                 <span class="eyebrow">Sourcing on Request</span>
                 <h3 class="panel__name">Processed Agricultural Products</h3>
-                <p class="panel__sub">Powders and dried ingredients</p>
-                <p class="lead">Tapioca powder, garlic powder and dried red chilli.</p>
-                <div class="attr-row"><span class="attr"><svg class="icon"><use href="#i-pin"/></svg>Sourced from India</span><span class="attr"><svg class="icon"><use href="#i-box"/></svg>Bulk &amp; custom packaging</span><span class="attr"><svg class="icon"><use href="#i-doc-check"/></svg>Specifications on request</span></div>
-                <div class="uses">
+                <div class="plist">
                   <h4>Products in this category</h4>
                   <ul>
-                    <li>Tapioca Powder</li>
-                    <li>Garlic Powder</li>
-                    <li>Dried Red Chilli</li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Tapioca Powder</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Garlic Powder</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Dried Red Chilli</button></li>
                   </ul>
                 </div>
-                <div class="uses">
-                  <h4>Widely used in</h4>
-                  <ul>
-                    <li>Seasonings &amp; sauces</li>
-                    <li>Snack foods</li>
-                    <li>Food manufacturing</li>
-                    <li>Food service</li>
-                  </ul>
+                <div class="pabout" aria-live="polite">
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Tapioca Powder</h5>
+                    <p>A fine starch powder made from cassava, used as a thickener and in food products.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Garlic Powder</h5>
+                    <p>Dried garlic ground into powder, for seasonings, sauces and food manufacturing.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Dried Red Chilli</h5>
+                    <p>Whole dried red chillies, for cooking, spice blends and food manufacturing.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
                 </div>
-                <table class="spec-table">
-                  <tr><th>Origin</th><td>India</td></tr>
-                  <tr><th>Grade / specification</th><td>Shared on request, per buyer requirement</td></tr>
-                  <tr><th>Quality documents</th><td>COA and test reports arranged per requirement</td></tr>
-                  <tr><th>Packaging</th><td>Bulk, woven PP bags, pouches or private label</td></tr>
-                  <tr><th>Availability</th><td>Confirmed on enquiry; may vary by season</td></tr>
-                  <tr><th>MOQ</th><td>Confirmed on enquiry</td></tr>
-                </table>
-
                 <div class="btn-row">
                   <a class="btn btn--primary" href="contact.html?product=Processed%20Agricultural%20Products">Request a Quote <svg class="icon"><use href="#i-arrow"/></svg></a>
                   <a class="btn btn--outline" href="contact.html?product=Processed%20Agricultural%20Products&amp;type=Request%20Product%20Specifications">Request Specifications</a>
@@ -536,34 +621,27 @@
               <div class="panel__info">
                 <span class="eyebrow">Sourcing on Request</span>
                 <h3 class="panel__name">Rice &amp; Grains</h3>
-                <p class="panel__sub">Basmati and non-basmati rice</p>
-                <p class="lead">Basmati and non-basmati rice.</p>
-                <div class="attr-row"><span class="attr"><svg class="icon"><use href="#i-pin"/></svg>Sourced from India</span><span class="attr"><svg class="icon"><use href="#i-box"/></svg>Bulk &amp; custom packaging</span><span class="attr"><svg class="icon"><use href="#i-doc-check"/></svg>Specifications on request</span></div>
-                <div class="uses">
+                <div class="plist">
                   <h4>Products in this category</h4>
                   <ul>
-                    <li>Basmati Rice</li>
-                    <li>Non-Basmati Rice</li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Basmati Rice</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Non-Basmati Rice</button></li>
                   </ul>
                 </div>
-                <div class="uses">
-                  <h4>Widely used in</h4>
-                  <ul>
-                    <li>Wholesale &amp; distribution</li>
-                    <li>Retail packs</li>
-                    <li>Food service</li>
-                    <li>Ready meals</li>
-                  </ul>
+                <div class="pabout" aria-live="polite">
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Basmati Rice</h5>
+                    <p>Long-grain aromatic rice, sourced by grade and packaging requirement.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Non-Basmati Rice</h5>
+                    <p>White and parboiled style non-basmati rice, sourced by variety, grade and packaging requirement.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
                 </div>
-                <table class="spec-table">
-                  <tr><th>Origin</th><td>India</td></tr>
-                  <tr><th>Grade / specification</th><td>Shared on request, per buyer requirement</td></tr>
-                  <tr><th>Quality documents</th><td>COA and test reports arranged per requirement</td></tr>
-                  <tr><th>Packaging</th><td>Bulk, woven PP bags, pouches or private label</td></tr>
-                  <tr><th>Availability</th><td>Confirmed on enquiry; may vary by season</td></tr>
-                  <tr><th>MOQ</th><td>Confirmed on enquiry</td></tr>
-                </table>
-
                 <div class="btn-row">
                   <a class="btn btn--primary" href="contact.html?product=Rice%20%26%20Grains">Request a Quote <svg class="icon"><use href="#i-arrow"/></svg></a>
                   <a class="btn btn--outline" href="contact.html?product=Rice%20%26%20Grains&amp;type=Request%20Product%20Specifications">Request Specifications</a>
@@ -576,35 +654,34 @@
               <div class="panel__info">
                 <span class="eyebrow">Sourcing on Request</span>
                 <h3 class="panel__name">Pulses &amp; Legumes</h3>
-                <p class="panel__sub">Beans, lentils and peas</p>
-                <p class="lead">Beans, lentils and peas in different varieties.</p>
-                <div class="attr-row"><span class="attr"><svg class="icon"><use href="#i-pin"/></svg>Sourced from India</span><span class="attr"><svg class="icon"><use href="#i-box"/></svg>Bulk &amp; custom packaging</span><span class="attr"><svg class="icon"><use href="#i-doc-check"/></svg>Specifications on request</span></div>
-                <div class="uses">
+                <div class="plist">
                   <h4>Products in this category</h4>
                   <ul>
-                    <li>Beans: different varieties</li>
-                    <li>Lentils: different varieties</li>
-                    <li>Peas: different varieties</li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Beans</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Lentils</button></li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Peas</button></li>
                   </ul>
                 </div>
-                <div class="uses">
-                  <h4>Widely used in</h4>
-                  <ul>
-                    <li>Wholesale &amp; distribution</li>
-                    <li>Retail packs</li>
-                    <li>Ready meals</li>
-                    <li>Food manufacturing</li>
-                  </ul>
+                <div class="pabout" aria-live="polite">
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Beans</h5>
+                    <p>Dried beans in different varieties, sourced according to your specification.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Lentils</h5>
+                    <p>Dried lentils in different varieties, sourced according to your specification.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Peas</h5>
+                    <p>Dried peas in different varieties, sourced according to your specification.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
                 </div>
-                <table class="spec-table">
-                  <tr><th>Origin</th><td>India</td></tr>
-                  <tr><th>Grade / specification</th><td>Shared on request, per buyer requirement</td></tr>
-                  <tr><th>Quality documents</th><td>COA and test reports arranged per requirement</td></tr>
-                  <tr><th>Packaging</th><td>Bulk, woven PP bags, pouches or private label</td></tr>
-                  <tr><th>Availability</th><td>Confirmed on enquiry; may vary by season</td></tr>
-                  <tr><th>MOQ</th><td>Confirmed on enquiry</td></tr>
-                </table>
-
                 <div class="btn-row">
                   <a class="btn btn--primary" href="contact.html?product=Pulses%20%26%20Legumes">Request a Quote <svg class="icon"><use href="#i-arrow"/></svg></a>
                   <a class="btn btn--outline" href="contact.html?product=Pulses%20%26%20Legumes&amp;type=Request%20Product%20Specifications">Request Specifications</a>
@@ -617,33 +694,20 @@
               <div class="panel__info">
                 <span class="eyebrow">Sourcing on Request</span>
                 <h3 class="panel__name">Edible Oils</h3>
-                <p class="panel__sub">Coconut products</p>
-                <p class="lead">Coconut oil, sourced according to buyer requirements.</p>
-                <div class="attr-row"><span class="attr"><svg class="icon"><use href="#i-pin"/></svg>Sourced from India</span><span class="attr"><svg class="icon"><use href="#i-box"/></svg>Bulk &amp; custom packaging</span><span class="attr"><svg class="icon"><use href="#i-doc-check"/></svg>Specifications on request</span></div>
-                <div class="uses">
+                <div class="plist">
                   <h4>Products in this category</h4>
                   <ul>
-                    <li>Coconut Oil</li>
+                    <li><button class="pitem" type="button" aria-pressed="false">Coconut Oil</button></li>
                   </ul>
                 </div>
-                <div class="uses">
-                  <h4>Widely used in</h4>
-                  <ul>
-                    <li>Cooking &amp; food service</li>
-                    <li>Bakery &amp; confectionery</li>
-                    <li>Retail packs</li>
-                    <li>Personal care products</li>
-                  </ul>
+                <div class="pabout" aria-live="polite">
+                  <div class="pabout__item">
+                    <h4>Product details</h4>
+                    <h5>Coconut Oil</h5>
+                    <p>Oil pressed from coconut, for cooking, food manufacturing and personal care products.</p>
+                    <p class="pabout__note">Grade, packaging, documents and minimum order are confirmed on enquiry.</p>
+                  </div>
                 </div>
-                <table class="spec-table">
-                  <tr><th>Origin</th><td>India</td></tr>
-                  <tr><th>Grade / specification</th><td>Shared on request, per buyer requirement</td></tr>
-                  <tr><th>Quality documents</th><td>COA and test reports arranged per requirement</td></tr>
-                  <tr><th>Packaging</th><td>Bulk, woven PP bags, pouches or private label</td></tr>
-                  <tr><th>Availability</th><td>Confirmed on enquiry; may vary by season</td></tr>
-                  <tr><th>MOQ</th><td>Confirmed on enquiry</td></tr>
-                </table>
-
                 <div class="btn-row">
                   <a class="btn btn--primary" href="contact.html?product=Edible%20Oils">Request a Quote <svg class="icon"><use href="#i-arrow"/></svg></a>
                   <a class="btn btn--outline" href="contact.html?product=Edible%20Oils&amp;type=Request%20Product%20Specifications">Request Specifications</a>
