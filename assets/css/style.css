@@ -548,6 +548,65 @@ p { margin: 0 0 1.1em; }
 .reveal.is-in { opacity: 1; transform: none; }
 .no-js .reveal { opacity: 1; transform: none; }
 
+/* ---------- Sea hero (home) ---------- */
+.btn--gold { background: #f2dcb2; color: var(--forest-deep); }
+.btn--gold:hover { background: #f8e8c8; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25); }
+.hero-sea { position: relative; overflow: hidden; background: #06302f; color: rgba(246, 241, 231, 0.88); }
+.hero-sea__img { position: absolute; inset: 0; }
+.hero-sea__img img { width: 100%; height: 100%; object-fit: cover; object-position: 100% 50%; }
+.hero-sea__img::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(4, 34, 33, 0.72) 0%, rgba(4, 34, 33, 0.5) 34%, rgba(4, 34, 33, 0) 56%);
+}
+.hero-sea .wrap { position: relative; z-index: 1; }
+.hero-sea__copy { max-width: 500px; padding: 52px 0 56px; }
+.hero-sea .eyebrow { margin-bottom: 14px; }
+.hero-sea h1 { color: var(--white); font-size: clamp(2.5rem, 4.3vw, 3.6rem); margin-bottom: 18px; }
+.hero-sea h1 em { color: #f2dcb2; font-style: italic; }
+.hero-sea .lead { color: rgba(246, 241, 231, 0.9); font-size: 1rem; line-height: 1.65; margin-bottom: 26px; max-width: 460px; }
+.hero-sea .btn { padding: 12px 22px; }
+
+/* ---------- Product catalogue ---------- */
+.range-link { text-align: center; margin: 40px 0 0; }
+.cat-meta { font-size: 0.78rem !important; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--earth-dark) !important; margin: 0; }
+.cat-list { max-width: 920px; margin: 0 auto; display: grid; gap: 12px; }
+.cat { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: box-shadow 0.3s var(--ease); }
+.cat[open] { box-shadow: var(--shadow); }
+.cat summary { display: flex; align-items: center; gap: 18px; padding: 20px 26px; cursor: pointer; list-style: none; }
+.cat summary::-webkit-details-marker { display: none; }
+.cat__num { font-family: var(--serif); font-size: 1.5rem; color: var(--earth); line-height: 1; }
+.cat__name { flex: 1; font-family: var(--serif); font-size: 1.5rem; font-weight: 600; line-height: 1.2; color: var(--forest-deep); }
+.cat__count { font-size: 0.8rem; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.cat__caret { flex: none; width: 20px; height: 20px; color: var(--earth-dark); transition: transform 0.25s var(--ease); }
+.cat[open] .cat__caret { transform: rotate(180deg); }
+.cat__body { padding: 4px 26px 24px; border-top: 1px solid var(--line); }
+.cat__row { display: grid; grid-template-columns: 230px 1fr; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.cat__row:last-of-type { border-bottom: 0; margin-bottom: 8px; }
+.cat__row h4 { font-family: var(--sans); font-size: 0.86rem; font-weight: 700; margin: 5px 0 0; line-height: 1.4; }
+.cat__items { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.cat__items li { padding: 5px 13px; border-radius: 999px; background: var(--linen); font-size: 0.88rem; line-height: 1.45; }
+.values--3 { grid-template-columns: repeat(3, 1fr); }
+
+/* Below this width the ship would sit under the text, so the image moves below the copy */
+@media (max-width: 1279px) {
+  .hero-sea { display: flex; flex-direction: column; }
+  .hero-sea__img { position: relative; inset: auto; order: 2; aspect-ratio: 1199 / 465; min-height: 260px; width: 100%; }
+  .hero-sea__img img { object-position: 82% 50%; }
+  .hero-sea__img::after { background: linear-gradient(180deg, #06302f 0%, rgba(6, 48, 47, 0) 22%); }
+  .hero-sea__copy { max-width: 680px; padding: 56px 0 28px; }
+}
+@media (max-width: 960px) {
+  .values--3 { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .cat summary { padding: 16px 18px; gap: 12px; }
+  .cat__name { font-size: 1.28rem; }
+  .cat__count { display: none; }
+  .cat__body { padding: 2px 18px 20px; }
+  .cat__row { grid-template-columns: 1fr; gap: 8px; }
+  .cat__row h4 { margin: 0; }
+}
+
 /* ==========================================================
    Responsive
    ========================================================== */
