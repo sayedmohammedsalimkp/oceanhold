@@ -553,7 +553,7 @@ p { margin: 0 0 1.1em; }
 .btn--gold:hover { background: #f8e8c8; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25); }
 .hero-sea { position: relative; overflow: hidden; background: #011d2f; color: rgba(246, 241, 231, 0.88); }
 .hero-sea__img { position: absolute; inset: 0; }
-.hero-sea__img img { width: 100%; height: 100%; object-fit: cover; object-position: 100% 50%; }
+.hero-sea__img img { width: 100%; height: 100%; object-fit: cover; object-position: 100% 30%; }
 .hero-sea__img::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(90deg, rgba(0, 20, 32, 0.62) 0%, rgba(0, 20, 32, 0.38) 34%, rgba(0, 20, 32, 0) 54%);
