@@ -121,39 +121,13 @@
   }
 
   /* ---------- Category showcase (products page) ---------- */
-  // Each panel has Products / Details tabs
-  var showPane = function (panel, index) {
-    panel.querySelectorAll(".ptab").forEach(function (tab, i) {
-      var on = i === index;
-      tab.setAttribute("aria-selected", on ? "true" : "false");
-      tab.tabIndex = on ? 0 : -1;
-      document.getElementById(tab.getAttribute("aria-controls")).hidden = !on;
-    });
-  };
-  document.querySelectorAll(".panel").forEach(function (panel) {
-    var tabs = panel.querySelectorAll(".ptab");
-    tabs.forEach(function (tab, i) {
-      tab.addEventListener("click", function () { showPane(panel, i); });
-      tab.addEventListener("keydown", function (e) {
-        if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
-        e.preventDefault();
-        var next = i === 0 ? 1 : 0;
-        showPane(panel, next);
-        tabs[next].focus();
-      });
-    });
-    showPane(panel, 0);
-  });
-
   document.querySelectorAll("[data-showcase]").forEach(function (box) {
     var picks = Array.prototype.slice.call(box.querySelectorAll(".pick"));
     var select = function (pick) {
       picks.forEach(function (p) {
         var on = p === pick;
         p.setAttribute("aria-expanded", on ? "true" : "false");
-        var panel = document.getElementById(p.getAttribute("aria-controls"));
-        panel.hidden = !on;
-        if (on) showPane(panel, 0);
+        document.getElementById(p.getAttribute("aria-controls")).hidden = !on;
       });
       box.classList.toggle("is-open", !!pick);
     };
