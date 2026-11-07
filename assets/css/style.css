@@ -385,12 +385,9 @@ p { margin: 0 0 1.1em; }
   text-align: center; padding: 32px 22px; background: var(--white); border-radius: var(--radius);
   border: 1px solid var(--line); box-shadow: var(--shadow);
 }
-.cert__mark {
-  width: 74px; height: 74px; margin: 0 auto 16px; border-radius: 50%;
-  border: 1.5px solid var(--earth); display: flex; align-items: center; justify-content: center;
-  font-family: var(--serif); font-weight: 700; font-size: 1.05rem; letter-spacing: 0.06em; color: var(--forest);
-}
-.cert h4 { margin-bottom: 4px; }
+.cert .icon-badge { display: flex; width: 74px; height: 74px; margin: 0 auto 16px; }
+.cert .icon-badge .icon { width: 34px; height: 34px; }
+.cert h4 { margin-bottom: 8px; }
 .cert p { margin: 0; font-size: 0.88rem; color: var(--muted); }
 
 /* ---------- Product detail (products page) ---------- */
