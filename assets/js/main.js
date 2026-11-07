@@ -334,6 +334,32 @@
     });
   }
 
+  /* ---------- Story route (about page): fills as the reader scrolls ---------- */
+  var route = document.querySelector(".story__route");
+  if (route) {
+    var marks = document.querySelectorAll(".chapter__mark");
+    var routeTicking = false;
+    var updateRoute = function () {
+      routeTicking = false;
+      var line = window.innerHeight * 0.55;
+      var r = route.getBoundingClientRect();
+      var done = Math.min(1, Math.max(0, (line - r.top) / r.height));
+      route.style.setProperty("--route", done.toFixed(4));
+      marks.forEach(function (m) {
+        m.classList.toggle("is-reached", m.parentNode.getBoundingClientRect().top < line);
+      });
+    };
+    var onRouteScroll = function () {
+      if (!routeTicking) {
+        routeTicking = true;
+        window.requestAnimationFrame(updateRoute);
+      }
+    };
+    window.addEventListener("scroll", onRouteScroll, { passive: true });
+    window.addEventListener("resize", onRouteScroll);
+    updateRoute();
+  }
+
   /* ---------- Year ---------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();

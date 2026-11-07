@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261107b">
 
 </head>
 <body>
@@ -38,32 +38,105 @@
 
 
   <main id="main">
-    <section class="page-hero">
-      <div class="page-hero__bg"><img src="assets/img/ragi-wide.jpg" alt=""></div>
+    <!-- Story: opening -->
+    <section class="story-hero">
+      <div class="story-hero__img"><img src="assets/img/hero-sea.jpg" srcset="assets/img/hero-sea-1600.webp 1600w, assets/img/hero-sea-2400.webp 2400w, assets/img/hero-sea-3840.webp 3840w" sizes="100vw" width="3840" height="1628" alt="" fetchpriority="high"></div>
       <div class="wrap">
         <div class="breadcrumb"><a href="index.html">Home</a> / About Us</div>
-        <span class="eyebrow eyebrow--light">About Oceanhold</span>
-        <h1>Connecting Oceans. Delivering Trust.</h1>
-        <p>Connecting global buyers with India’s agricultural diversity through thoughtful sourcing, product knowledge and dependable export coordination.</p>
+        <span class="eyebrow eyebrow--light reveal">Our Story</span>
+        <h1 class="reveal">A conversation by the sea. <em>A vision beyond borders.</em></h1>
+        <p class="story-hero__lead reveal">It began with two friends, an evening by the sea and a conversation about the future.</p>
       </div>
     </section>
 
-    <!-- Story -->
-    <section class="section">
-      <div class="wrap split">
-        <div class="split__media split__media--tall reveal"><img src="assets/img/moringa-wide.jpg" alt="Moringa leaf powder with fresh leaves" loading="lazy"></div>
-        <div class="reveal">
-          <span class="eyebrow">Our Story</span>
-          <h2>A contemporary Indian export house</h2>
-          <p class="lead">India has a remarkable agricultural diversity, shaped by its regions, farmers and traditional knowledge. At Oceanhold Exports, we work with selected processing units across the country to connect this diversity with international markets.</p>
-          <p>Based in Pattambi, Kerala, we began with a simple belief: every shipment represents more than just products — it represents trust, quality and the rich agricultural heritage of India.</p>
-          <p>Our focus is on understanding buyer requirements, identifying suitable sourcing options and coordinating the details needed to move products into international trade. We proudly partner with importers, distributors, wholesalers and food manufacturers across global markets.</p>
+    <!-- Story: the journey -->
+    <section class="story" id="story">
+      <div class="story__wrap wrap">
+        <div class="story__route" aria-hidden="true"><span class="story__progress"></span></div>
+
+        <article class="chapter">
+          <header class="chapter__mark reveal">
+            <span class="chapter__when">12th-grade days</span>
+            <h2>By the sea</h2>
+          </header>
+          <div class="chapter__body">
+            <p class="chapter__first reveal">During our 12th-grade days, we often spent our evenings at a cliff overlooking the sea in our hometown. Business ideas, possibilities and the thought of building something of our own were regular subjects of conversation. One evening, we began discussing what it would take to create a business, build a brand and eventually provide opportunities for others.</p>
+            <p class="reveal">Somewhere in that conversation, we heard about a young entrepreneur exporting curry leaves to international markets. It was a simple thought, but it stayed with us. Something so familiar in our homes was finding its way into markets thousands of miles away. We began wondering what else India had to offer and what opportunities existed beyond our borders.</p>
+            <p class="story-pull reveal">That curiosity became an ambition, although we knew we first had to learn and gain experience.</p>
+          </div>
+        </article>
+
+        <article class="chapter">
+          <header class="chapter__mark reveal">
+            <span class="chapter__when">After school</span>
+            <h2>Two different paths</h2>
+          </header>
+          <div class="chapter__body">
+            <p class="reveal">After school, our paths took us into different fields. <strong class="story-name">Yasir</strong> pursued Banking and Financial Services, developing an interest in finance, investments and business fundamentals, while <strong class="story-name">Jaseer</strong> entered the world of performance marketing. We wanted to understand how businesses worked, develop professional skills and build a foundation before taking on something of our own. Yet, the idea we had discussed by the sea never quite disappeared.</p>
+            <p class="reveal">After gaining professional experience, we found ourselves returning to that original ambition. We decided to step away from our jobs and give the idea the attention it deserved. What had once been casual conversations now required serious research, practical understanding and a willingness to start from the ground up.</p>
+          </div>
+        </article>
+
+        <article class="chapter">
+          <header class="chapter__mark reveal">
+            <span class="chapter__when">Qatar</span>
+            <h2>Learning the trade</h2>
+          </header>
+          <div class="chapter__body">
+            <p class="reveal">We knew that international trade could not be understood through research alone. Through a family connection, we had an opportunity to visit Qatar and learn from an established spices business. That experience gave us a closer look at how food products move through international markets, from sourcing and quality assessment to packaging, distribution and buyer expectations.</p>
+            <p class="reveal">It also introduced us to products we had not previously explored in depth. Sorghum, known in India as jowar, caught our attention. As we learned more about its uses and market potential, our interest expanded towards ragi, other millets and eventually value-added products such as natural malts. Each discovery led to another question, and each question took us deeper into understanding the products and the markets they served.</p>
+            <div class="story-grains reveal">
+              <figure><img src="assets/img/sorghum.jpg" alt="White sorghum grains" loading="lazy"><figcaption>Sorghum</figcaption></figure>
+              <figure><img src="assets/img/ragi.jpg" alt="Ragi grains" loading="lazy"><figcaption>Ragi</figcaption></figure>
+              <figure><img src="assets/img/little-millet.jpg" alt="Little millet grains" loading="lazy"><figcaption>Millets</figcaption></figure>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter">
+          <header class="chapter__mark reveal">
+            <span class="chapter__when">Mid-2025</span>
+            <h2>The groundwork</h2>
+          </header>
+          <div class="chapter__body">
+            <p class="reveal">By mid-2025, we had begun turning that understanding into groundwork. We researched product specifications, explored market opportunities and started developing relationships with farmers and processing units. We also sought guidance from agricultural professionals to better understand product characteristics and quality requirements. Rather than simply looking for available products, we wanted to understand their origin, processing and suitability before bringing them to international buyers.</p>
+            <div class="story-photo reveal"><img src="assets/img/approach-farmer.webp" alt="Farmer ploughing a field with a pair of oxen, with a large tree and misty hills behind" loading="lazy"></div>
+            <p class="reveal">As our understanding grew, so did our perspective on the business. Our initial attention was towards the GCC, but changing market conditions, freight costs and commercial expectations taught us that international trade requires flexibility and a broader outlook. We began exploring opportunities across other parts of Asia, Europe, Africa and the Americas, recognising that different markets and buyers have different needs.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Story: 2026 -->
+    <section class="story-year">
+      <div class="wrap story-year__grid">
+        <div class="story-year__num reveal" aria-hidden="true">2026</div>
+        <div>
+          <p class="story-year__lead reveal">In 2026, the work and learning that had brought us this far took shape as Oceanhold Exports.</p>
+          <p class="reveal">Today, we are building an Indian export and sourcing company focused on agricultural and food products, with particular interest in millets, sorghum, spices, rice, moringa, coffee, cardamom, value-added ingredients and more. Our approach begins with understanding the buyer’s requirements, identifying suitable products and working with sourcing partners who can help meet the required specifications.</p>
         </div>
       </div>
     </section>
 
+    <!-- Story: what remains -->
+    <section class="story-belief">
+      <div class="wrap">
+        <p class="story-belief__lead reveal">But beyond the products and markets, there is something that has remained unchanged since that first conversation.</p>
+        <p class="story-belief__main reveal">We believe good business is built through relationships. A shipment may complete a transaction, but trust is what brings people together again. We want to build a company where communication is clear, commitments are respected and partnerships are valued beyond individual orders.</p>
+        <p class="reveal">We are still at the beginning of our journey, learning, building our network and exploring new possibilities. What started as a conversation between two friends has become a shared ambition to connect people, products and markets across the world.</p>
+      </div>
+    </section>
+
+    <!-- Story: closing -->
+    <section class="story-close">
+      <svg class="story-close__waves" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40c100-24 200-24 300 0s200 24 300 0 200-24 300 0 200 24 300 0"/><path d="M0 72c100-24 200-24 300 0s200 24 300 0 200-24 300 0 200 24 300 0"/><path d="M0 104c100-24 200-24 300 0s200 24 300 0 200-24 300 0 200 24 300 0"/></svg>
+      <div class="wrap">
+        <p class="reveal">From a conversation by the sea to connections across the world. <span>This is Oceanhold Exports.</span></p>
+      </div>
+    </section>
+
     <!-- Mission / Vision -->
-    <section class="section--tight" style="padding-top:0">
+    <section class="section--tight">
       <div class="wrap mv">
         <div class="mv__card reveal">
           <span class="eyebrow eyebrow--light">Our Mission</span>
@@ -189,7 +262,7 @@
     <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg>
   </a>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=20261107"></script>
 
 </body>
 </html>

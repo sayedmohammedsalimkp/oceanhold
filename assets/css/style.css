@@ -789,3 +789,104 @@ p { margin: 0 0 1.1em; }
   .btn { white-space: normal; text-align: center; }
   .btn-row .btn { flex: 1 1 100%; }
 }
+
+/* ---------- Our story (about page) ---------- */
+.story-hero {
+  position: relative; display: flex; align-items: flex-end; min-height: min(82vh, 760px);
+  background: #011d2f; color: var(--linen); overflow: hidden;
+}
+.story-hero__img { position: absolute; inset: 0; }
+.story-hero__img img { width: 100%; height: 100%; object-fit: cover; object-position: 100% 40%; }
+.story-hero__img::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(1, 29, 47, 0.96) 0%, rgba(1, 29, 47, 0.84) 46%, rgba(1, 29, 47, 0) 74%),
+    linear-gradient(0deg, rgba(1, 29, 47, 0.7) 0%, rgba(1, 29, 47, 0) 45%);
+}
+.story-hero .wrap { position: relative; z-index: 1; padding-top: 96px; padding-bottom: 88px; }
+.story-hero h1 { color: var(--white); max-width: 720px; margin-bottom: 22px; }
+.story-hero h1 em { display: block; color: #f2dcb2; }
+.story-hero__lead {
+  max-width: 520px; margin: 0; font-family: var(--serif); font-style: italic;
+  font-size: clamp(1.3rem, 2vw, 1.6rem); line-height: 1.4; color: rgba(246, 241, 231, 0.92);
+}
+
+.story { padding: 112px 0 40px; }
+.story__wrap { position: relative; max-width: 1080px; }
+.story__route {
+  --route: 0; position: absolute; top: 12px; bottom: 112px; left: 298px; width: 1px; background: var(--linen-3);
+}
+.story__progress {
+  position: absolute; inset: 0; background: var(--earth);
+  transform: scaleY(var(--route)); transform-origin: top;
+}
+.chapter { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 100px; padding-bottom: 96px; }
+.chapter__mark { position: sticky; top: 124px; align-self: start; }
+.chapter__mark::after {
+  content: ""; position: absolute; top: 5px; right: -56px; width: 11px; height: 11px; border-radius: 50%;
+  background: var(--linen); border: 1px solid var(--earth); transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.chapter__mark.is-reached::after { background: var(--earth); box-shadow: 0 0 0 5px rgba(173, 128, 85, 0.18); }
+.chapter__when {
+  display: block; margin-bottom: 10px; font-size: 0.74rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--earth-dark);
+}
+.chapter__mark h2 { margin: 0; font-size: clamp(1.8rem, 2.8vw, 2.3rem); }
+.chapter__body > p { font-size: 1.14rem; line-height: 1.85; margin-bottom: 1.4em; color: #45433b; }
+.chapter__first::first-letter {
+  float: left; margin: 0.08em 0.1em 0 0; font-family: var(--serif); font-size: 4.4em;
+  line-height: 0.78; color: var(--earth-dark);
+}
+.chapter__body > .story-pull {
+  margin: 44px 0 0; padding-top: 26px; border-top: 1px solid var(--earth);
+  font-family: var(--serif); font-style: italic; font-size: clamp(1.6rem, 2.8vw, 2.1rem); line-height: 1.3; color: var(--forest);
+}
+.story-name { font-family: var(--serif); font-size: 1.16em; font-weight: 600; line-height: 1; color: var(--earth-dark); }
+.story-grains { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 34px; }
+.story-grains figure { margin: 0; }
+.story-grains img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); }
+.story-grains figcaption { margin-top: 8px; font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: var(--muted); text-align: center; }
+.story-photo { margin: 36px 0 38px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 16 / 9; }
+.story-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 68%; }
+
+.story-year { padding: 104px 0; background: var(--forest-deep); color: rgba(246, 241, 231, 0.82); }
+.story-year__grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 72px; align-items: center; max-width: 1080px; }
+.story-year__num { font-family: var(--serif); font-size: clamp(5.5rem, 13vw, 10.5rem); line-height: 0.9; color: #d9bf94; }
+.story-year__lead { font-family: var(--serif); font-size: clamp(1.7rem, 2.8vw, 2.25rem); line-height: 1.25; color: var(--linen); }
+.story-year p:last-child { margin-bottom: 0; font-size: 1.08rem; line-height: 1.8; }
+
+.story-belief { padding: 112px 0; text-align: center; }
+.story-belief .wrap { max-width: 800px; }
+.story-belief p { font-size: 1.12rem; line-height: 1.85; color: #45433b; }
+.story-belief p:last-child { margin-bottom: 0; }
+.story-belief .story-belief__lead { font-family: var(--serif); font-style: italic; font-size: clamp(1.35rem, 2.2vw, 1.65rem); line-height: 1.4; color: var(--earth-dark); margin-bottom: 30px; }
+.story-belief .story-belief__main { font-family: var(--serif); font-size: clamp(1.7rem, 3vw, 2.35rem); line-height: 1.3; color: var(--forest-deep); margin-bottom: 36px; }
+
+.story-close { position: relative; padding: 112px 0 124px; background: #011d2f; text-align: center; overflow: hidden; }
+.story-close__waves { position: absolute; left: 0; bottom: 0; width: 100%; height: 110px; fill: none; stroke: rgba(217, 191, 148, 0.2); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.story-close__waves path { vector-effect: non-scaling-stroke; }
+.story-close .wrap { position: relative; max-width: 880px; }
+.story-close p { margin: 0; font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.18; color: var(--linen); text-wrap: balance; }
+.story-close span { display: block; margin-top: 18px; font-style: italic; color: #f2dcb2; }
+
+@media (max-width: 860px) {
+  .story-hero { min-height: 620px; }
+  .story-hero__img img { object-position: 62% 50%; }
+  .story-hero__img::after { background: linear-gradient(0deg, rgba(1, 29, 47, 0.96) 0%, rgba(1, 29, 47, 0.72) 48%, rgba(1, 29, 47, 0.1) 100%); }
+  .story-hero .wrap { padding-top: 140px; padding-bottom: 56px; }
+  .story { padding: 72px 0 8px; }
+  .story__wrap { padding-left: 20px; padding-right: 20px; }
+  .story__route { top: 10px; bottom: 64px; left: 20px; }
+  .chapter { display: block; padding: 0 0 64px 34px; }
+  .chapter__mark { position: relative; top: 0; margin-bottom: 22px; }
+  .chapter__mark::after { top: 4px; right: auto; left: -39px; }
+  .chapter__body > p { font-size: 1.08rem; line-height: 1.75; }
+  .story-year { padding: 72px 0; }
+  .story-year__grid { grid-template-columns: 1fr; gap: 28px; }
+  .story-belief { padding: 76px 0; }
+  .story-close { padding: 76px 0 112px; }
+}
+@media (max-width: 520px) {
+  .story-grains { gap: 8px; }
+  .story-grains figcaption { font-size: 0.95rem; }
+}
