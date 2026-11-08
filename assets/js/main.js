@@ -88,6 +88,8 @@
     var c = sectionColour(behind);
     header.style.setProperty("--hdr-bg", "rgba(" + c[0] + ", " + c[1] + ", " + c[2] + ", 0.94)");
     header.classList.toggle("on-dark", (c[0] * 0.299 + c[1] * 0.587 + c[2] * 0.114) < 140);
+    // Over each page's first banner the brand shows as white OCEANHOLD with gold EXPORTS
+    header.classList.toggle("on-home-hero", !!(behind && behind.closest(".hero-sea, .story-hero, .page-hero")));
   };
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll);

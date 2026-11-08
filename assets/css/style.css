@@ -218,6 +218,9 @@ body:not(.nav-open) .site-header.on-dark:not(.is-scrolled) {
 }
 body:not(.nav-open) .site-header.on-dark .logo__name { color: #e6c88e; }
 body:not(.nav-open) .site-header.on-dark .logo__sub { color: #d9bf94; }
+/* Over each page's first banner only: white OCEANHOLD with gold EXPORTS */
+body:not(.nav-open) .site-header.on-home-hero .logo__name { color: #fff; }
+body:not(.nav-open) .site-header.on-home-hero .logo__sub { color: #e6c88e; }
 body:not(.nav-open) .site-header.on-dark .logo__sub::before,
 body:not(.nav-open) .site-header.on-dark .logo__sub::after { background: #d9bf94; }
 body:not(.nav-open) .site-header.on-dark .nav__link { color: rgba(255, 255, 255, 0.86); }
@@ -283,6 +286,25 @@ body:not(.nav-open) .site-header.on-dark .nav-toggle span::after { background: #
   .page-hero--full .page-hero__bg img { object-position: 70% 50%; }
   .page-hero--full .page-hero__bg::after {
     background: linear-gradient(180deg, rgba(20, 12, 6, 0.7) 0%, rgba(20, 12, 6, 0.55) 55%, rgba(20, 12, 6, 0.3) 100%);
+  }
+}
+/* Green photo banner (Our Sourcing tea field): the whole photo is busy green, so a deep green fade
+   covers the left for the text, and the photo is anchored right to keep the pickers in view */
+.page-hero--green { background: #0b2414; }
+.page-hero.page-hero--green h1 { max-width: 700px; }
+.page-hero.page-hero--green p { max-width: 580px; }
+.page-hero--green .wrap { padding-top: calc(24px + var(--header-h)); padding-bottom: 40px; }
+/* A light contrast and colour lift keeps the tea rows crisp; the fade only darkens the text side */
+.page-hero--green .page-hero__bg img { object-position: 72% 50%; filter: contrast(1.08) saturate(1.12); }
+.page-hero--green .page-hero__bg::after {
+  background:
+    linear-gradient(90deg, rgba(5, 22, 11, 0.82) 0%, rgba(5, 22, 11, 0.58) 34%, rgba(5, 22, 11, 0.08) 56%, rgba(5, 22, 11, 0) 64%),
+    linear-gradient(180deg, rgba(5, 22, 11, 0.45) 0%, rgba(5, 22, 11, 0) 150px);
+}
+@media (max-width: 900px) {
+  .page-hero--green .page-hero__bg img { object-position: 74% 50%; }
+  .page-hero--green .page-hero__bg::after {
+    background: linear-gradient(180deg, rgba(5, 22, 11, 0.8) 0%, rgba(5, 22, 11, 0.6) 55%, rgba(5, 22, 11, 0.25) 100%);
   }
 }
 /* Home banner on narrower laptops: the photo is cropped tighter, so the left side is darkened more for the text */
