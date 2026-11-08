@@ -36,6 +36,7 @@
   --sans: "Body Times", "Times New Roman", Times, Georgia, serif;
 
   --wrap: 1200px;
+  --header-h: 86px;
   --radius: 10px;
   --shadow: 0 1px 2px rgba(36, 30, 20, 0.06), 0 8px 24px rgba(36, 30, 20, 0.07);
   --shadow-lg: 0 2px 4px rgba(36, 30, 20, 0.06), 0 18px 40px rgba(36, 30, 20, 0.12);
@@ -159,7 +160,7 @@ p { margin: 0 0 1.1em; }
   backdrop-filter: saturate(1.4) blur(10px);
   -webkit-backdrop-filter: saturate(1.4) blur(10px);
   border-bottom: 1px solid transparent;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition: background-color 0.35s, border-color 0.35s, box-shadow 0.35s;
 }
 .site-header.is-scrolled { border-bottom-color: var(--line); box-shadow: 0 4px 18px rgba(36, 30, 20, 0.05); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 86px; gap: 24px; }
@@ -208,6 +209,36 @@ p { margin: 0 0 1.1em; }
 .nav-open .nav-toggle span::before { top: 0; transform: rotate(45deg); }
 .nav-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
 
+/* Header over a dark section (photo banners, dark bands, footer): see-through with a white brand */
+.logo__name, .logo__sub, .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after { transition: color 0.35s, background-color 0.35s; }
+/* At the very top of the page (before scrolling) the header has no background over the banner */
+body:not(.nav-open) .site-header.on-dark:not(.is-scrolled) {
+  background: transparent; border-bottom-color: transparent; box-shadow: none;
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+}
+body:not(.nav-open) .site-header.on-dark .logo__name { color: #e6c88e; }
+body:not(.nav-open) .site-header.on-dark .logo__sub { color: #d9bf94; }
+body:not(.nav-open) .site-header.on-dark .logo__sub::before,
+body:not(.nav-open) .site-header.on-dark .logo__sub::after { background: #d9bf94; }
+body:not(.nav-open) .site-header.on-dark .nav__link { color: rgba(255, 255, 255, 0.86); }
+body:not(.nav-open) .site-header.on-dark .nav__link:hover,
+body:not(.nav-open) .site-header.on-dark .nav__link[aria-current="page"] { color: #fff; }
+body:not(.nav-open) .site-header.on-dark .nav__link::after { background: #f2dcb2; }
+body:not(.nav-open) .site-header.on-dark .nav .btn--primary { background: #f2dcb2; border-color: #f2dcb2; color: var(--forest-deep); }
+body:not(.nav-open) .site-header.on-dark .nav-toggle { border-color: rgba(255, 255, 255, 0.4); }
+
+/* Once scrolling starts, the full-width bar takes the colour of the section behind it
+   (cream on cream, white on white, beige on beige, dark on dark). The script sets --hdr-bg */
+body:not(.nav-open) .site-header.is-scrolled { background: var(--hdr-bg, rgba(246, 241, 231, 0.94)); }
+body:not(.nav-open) .site-header.is-scrolled.on-dark { border-bottom-color: rgba(255, 255, 255, 0.08); box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12); }
+body.nav-open .site-header { background: rgba(246, 241, 231, 0.97); }
+body:not(.nav-open) .site-header.on-dark .nav-toggle span,
+body:not(.nav-open) .site-header.on-dark .nav-toggle span::before,
+body:not(.nav-open) .site-header.on-dark .nav-toggle span::after { background: #fff; }
+
+/* The first banner on every page slides up behind the header */
+.hero-sea, .story-hero, .page-hero { margin-top: calc(-1 * var(--header-h)); }
+
 /* ---------- Hero ---------- */
 .hero { position: relative; overflow: hidden; background: linear-gradient(100deg, var(--linen) 0%, var(--linen) 40%, var(--linen-2) 100%); }
 .hero__inner { display: grid; grid-template-columns: 1fr 1.08fr; align-items: center; min-height: 620px; }
@@ -236,22 +267,80 @@ p { margin: 0 0 1.1em; }
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(90deg, rgba(26, 42, 32, 0.96) 0%, rgba(26, 42, 32, 0.78) 50%, rgba(26, 42, 32, 0.45) 100%);
 }
-.page-hero .wrap { position: relative; z-index: 1; padding-top: 110px; padding-bottom: 100px; }
+/* Full-screen photo banner (Products): the photo shows at full strength and fills the first screen */
+.page-hero--full { display: flex; align-items: center; min-height: 100vh; min-height: 100svh; background: #1c120b; }
+.page-hero--full .wrap { width: 100%; padding-top: calc(40px + var(--header-h)); padding-bottom: 56px; }
+.page-hero--full .page-hero__bg img { opacity: 1; object-position: 18% 50%; }
+/* Keep the heading and intro on the dark, empty side of the photo */
+.page-hero.page-hero--full h1 { max-width: 560px; }
+.page-hero.page-hero--full p { max-width: 470px; }
+.page-hero--full .page-hero__bg::after {
+  background:
+    linear-gradient(90deg, rgba(20, 12, 6, 0.78) 0%, rgba(20, 12, 6, 0.5) 38%, rgba(20, 12, 6, 0) 62%),
+    linear-gradient(180deg, rgba(10, 6, 3, 0.5) 0%, rgba(10, 6, 3, 0) 170px);
+}
+@media (max-width: 900px) {
+  .page-hero--full .page-hero__bg img { object-position: 70% 50%; }
+  .page-hero--full .page-hero__bg::after {
+    background: linear-gradient(180deg, rgba(20, 12, 6, 0.7) 0%, rgba(20, 12, 6, 0.55) 55%, rgba(20, 12, 6, 0.3) 100%);
+  }
+}
+/* Home banner on narrower laptops: the photo is cropped tighter, so the left side is darkened more for the text */
+@media (min-width: 901px) and (max-width: 1279px) {
+  .hero-sea__img::after {
+    background:
+      linear-gradient(90deg, rgba(0, 20, 32, 0.82) 0%, rgba(0, 20, 32, 0.6) 42%, rgba(0, 20, 32, 0) 70%),
+      linear-gradient(180deg, rgba(0, 20, 32, 0.55) 0%, rgba(0, 20, 32, 0) 170px);
+  }
+}
+.page-hero .wrap { position: relative; z-index: 1; padding-top: calc(110px + var(--header-h)); padding-bottom: 100px; }
 .page-hero h1 { color: var(--linen); max-width: 760px; }
 .page-hero p { max-width: 620px; font-size: 1.1rem; color: rgba(246, 241, 231, 0.82); margin: 0; }
 .breadcrumb { font-size: 0.82rem; color: rgba(246, 241, 231, 0.6); margin-bottom: 22px; letter-spacing: 0.04em; }
 .breadcrumb a:hover { color: var(--linen); }
 
-/* ---------- Trust strip ---------- */
-.trust { background: var(--linen-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.trust__grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-.trust__item {
-  display: flex; align-items: center; gap: 16px; padding: 30px 26px;
-  font-family: var(--serif); font-size: 1.08rem; line-height: 1.3; color: var(--forest-deep);
+/* ---------- Highlights route (home): a ship sails India to the world as you scroll ---------- */
+.route-band { position: relative; overflow: hidden; padding: 80px 0 24px; background: var(--linen); color: #4d4033; }
+.route-band__head { position: relative; text-align: center; margin-bottom: 26px; }
+.route-band__head .eyebrow { margin-bottom: 0; color: #7a4f2a; }
+.route-band__head .eyebrow::before, .route-band__head .eyebrow::after { background: #9a6c43; }
+.route-band__route { position: relative; }
+.route-band__svg { position: absolute; left: 0; top: 0; width: 100%; height: 100px; overflow: visible; }
+.route-band__svg path { fill: none; vector-effect: non-scaling-stroke; }
+.route-band__base { stroke: rgba(90, 58, 30, 0.5); stroke-width: 1.6; stroke-dasharray: 2 7; stroke-linecap: round; }
+.route-band__done { stroke: #7a4f2a; stroke-width: 2.2; }
+.route-band__ship {
+  position: absolute; left: 0; top: 50px; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%;
+  background: var(--forest-deep); color: #f2dcb2; display: grid; place-items: center; z-index: 2;
+  box-shadow: 0 0 0 6px rgba(26, 42, 32, 0.14), 0 6px 14px rgba(45, 28, 12, 0.3);
 }
-.trust__item + .trust__item { border-left: 1px solid var(--line); }
-.trust__item svg { flex: none; width: 42px; height: 42px; color: var(--earth); }
-
+.route-band__ship .icon { width: 24px; height: 24px; stroke-width: 1.6; }
+.route-band__stops { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); }
+.route-band__stops li { position: relative; padding: 124px 18px 0; text-align: center; }
+.route-band__stops li::before {
+  content: ""; position: absolute; left: 50%; top: 50px; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%;
+  background: var(--linen); border: 1.5px solid rgba(90, 58, 30, 0.6); transition: background 0.6s var(--ease), box-shadow 0.6s var(--ease);
+}
+.route-band__stops li.is-on::before { background: #7a4f2a; box-shadow: 0 0 0 6px rgba(122, 79, 42, 0.2); }
+.route-band__stops .icon { width: 30px; height: 30px; color: #7a4f2a; margin-bottom: 12px; opacity: 0.5; transition: opacity 0.6s var(--ease); }
+.route-band__stops li.is-on .icon { opacity: 1; }
+.route-band__stops h3 { font-size: clamp(1.25rem, 1.7vw, 1.45rem); font-weight: 600; line-height: 1.2; color: var(--forest-deep); margin-bottom: 10px; }
+.route-band__stops h3 em { display: block; font-weight: 500; color: #7a4f2a; }
+.route-band__stops p { margin: 0 auto; max-width: 250px; font-size: 0.93rem; line-height: 1.6; color: #4d4033; }
+.route-band__vsvg { display: none; }
+@media (max-width: 860px) {
+  .route-band { padding: 64px 0 8px; }
+  .route-band__svg, .route-band__ship { display: none; }
+  .route-band__stops { position: relative; grid-template-columns: 1fr; gap: 34px; padding-left: 34px; }
+  .route-band__stops::before { content: ""; position: absolute; left: 12.5px; top: 8px; bottom: 8px; width: 1px; background: rgba(90, 58, 30, 0.45); }
+  .route-band__stops li { padding: 0; text-align: left; }
+  .route-band__stops li::before { left: -28px; top: 9px; margin: 0; }
+  .route-band__stops p { margin: 0; max-width: none; }
+  /* The script draws a wavy route through the dots; it replaces the straight line */
+  .route-band__stops.has-curve::before { display: none; }
+  .route-band__vsvg { display: block; position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+  .route-band__vsvg path { fill: none; }
+}
 /* ---------- Icons ---------- */
 .icon { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
 .icon-badge {
@@ -540,17 +629,27 @@ p { margin: 0 0 1.1em; }
 /* ---------- Sea hero (home) ---------- */
 .btn--gold { background: #f2dcb2; color: var(--forest-deep); }
 .btn--gold:hover { background: #f8e8c8; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25); }
-.hero-sea { position: relative; overflow: hidden; background: #011d2f; color: rgba(246, 241, 231, 0.88); }
+.hero-sea { position: relative; overflow: hidden; padding-top: var(--header-h); background: #011d2f; color: rgba(246, 241, 231, 0.88); }
 .hero-sea__img { position: absolute; inset: 0; }
-.hero-sea__img img { width: 100%; height: 100%; object-fit: cover; object-position: 100% 30%; }
+.hero-sea__img picture { display: block; width: 100%; height: 100%; }
+.hero-sea__img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
 .hero-sea__img::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(90deg, rgba(0, 20, 32, 0.62) 0%, rgba(0, 20, 32, 0.38) 34%, rgba(0, 20, 32, 0) 54%);
+  background:
+    linear-gradient(90deg, rgba(0, 20, 32, 0.66) 0%, rgba(0, 20, 32, 0.4) 34%, rgba(0, 20, 32, 0) 56%),
+    linear-gradient(180deg, rgba(0, 20, 32, 0.55) 0%, rgba(0, 20, 32, 0) 170px);
 }
-.hero-sea .wrap { position: relative; z-index: 1; }
-.hero-sea__copy { max-width: 500px; padding: 52px 0 56px; }
+.hero-sea .wrap { position: relative; z-index: 1; width: 100%; }
+.hero-sea__copy { max-width: 540px; padding: 52px 0 56px; }
+/* Laptops and desktops: the banner fills the whole first screen with the photo behind the headline.
+   The photo is wider than most screens, so it is anchored to the right to keep the ship and spices in view */
+@media (min-width: 901px) {
+  .hero-sea { display: flex; align-items: center; min-height: 100vh; min-height: 100svh; }
+  .hero-sea__img img { object-position: 78% 50%; }
+  .hero-sea__copy { padding: 24px 0 32px; }
+}
 .hero-sea .eyebrow { margin-bottom: 14px; }
-.hero-sea h1 { color: var(--white); font-size: clamp(2.5rem, 4.3vw, 3.6rem); margin-bottom: 18px; }
+.hero-sea h1 { color: var(--white); font-size: clamp(2.5rem, 4.3vw, 3.6rem); margin-bottom: 30px; }
 .hero-sea h1 em { color: #f2dcb2; font-style: italic; }
 .hero-sea .lead { color: rgba(246, 241, 231, 0.9); font-size: 1rem; line-height: 1.65; margin-bottom: 26px; max-width: 460px; }
 .hero-sea .btn { padding: 12px 22px; }
@@ -670,13 +769,16 @@ p { margin: 0 0 1.1em; }
 .p-card__img .cc__art .icon { width: 42px; height: 42px; }
 .values--3 { grid-template-columns: repeat(3, 1fr); }
 
-/* Below this width the ship would sit under the text, so the image moves below the copy */
-@media (max-width: 1279px) {
-  .hero-sea { display: flex; flex-direction: column; }
-  .hero-sea__img { position: relative; inset: auto; order: 2; aspect-ratio: 2000 / 848; min-height: 260px; width: 100%; }
-  .hero-sea__img img { object-position: 82% 50%; }
-  .hero-sea__img::after { background: linear-gradient(180deg, #011d2f 0%, rgba(1, 29, 47, 0) 22%); }
-  .hero-sea__copy { max-width: 680px; padding: 56px 0 28px; }
+/* Phones and small tablets: the photo fills the whole first screen behind the text, like desktop.
+   The text sits over the darker sea at the top, with the ship and spices showing below it */
+@media (max-width: 900px) {
+  .hero-sea { display: flex; flex-direction: column; justify-content: flex-start; min-height: 100vh; min-height: 100svh; }
+  .hero-sea__img img { object-position: 50% 50%; }   /* phones load the portrait photo made for this screen */
+  .hero-sea__img::after {
+    background: linear-gradient(180deg, rgba(1, 22, 34, 0.9) 0%, rgba(1, 22, 34, 0.72) 38%, rgba(1, 22, 34, 0.2) 66%, rgba(1, 22, 34, 0.35) 100%);
+  }
+  .hero-sea__copy { max-width: 680px; padding: 40px 0 28px; }
+  .hero-sea .eyebrow::after { display: none; }
 }
 @media (max-width: 1100px) {
   .product-grid.product-grid--cats { grid-template-columns: repeat(3, 1fr); }
@@ -739,10 +841,6 @@ p { margin: 0 0 1.1em; }
   .hero__media { position: relative; width: auto; height: 360px; margin: 0 -28px; }
   .hero__media::before { background: linear-gradient(180deg, var(--linen) 0%, rgba(246, 241, 231, 0) 26%); }
 
-  .trust__grid { grid-template-columns: 1fr 1fr; }
-  .trust__item:nth-child(3) { border-left: 0; }
-  .trust__item:nth-child(n + 3) { border-top: 1px solid var(--line); }
-
   .split, .split--wide-media, .contact-grid { grid-template-columns: 1fr; gap: 44px; }
   .feature-grid { grid-template-columns: 1fr 1fr; }
   .process { grid-template-columns: 1fr; gap: 28px; }
@@ -766,14 +864,13 @@ p { margin: 0 0 1.1em; }
   .wrap { padding: 0 18px; }
   .hero__media { margin: 0 -18px; height: 300px; }
   .section { padding: 64px 0; }
+  :root { --header-h: 74px; }
   .header-inner { height: 74px; }
   .nav { inset: 74px 0 auto 0; padding: 8px 18px 24px; }
   .subnav { top: 74px; }
   .logo__name { font-size: 1.55rem; }
-  .trust__grid, .product-grid, .feature-grid, .more-grid, .values, .chip-grid { grid-template-columns: 1fr; }
+  .product-grid, .feature-grid, .more-grid, .values, .chip-grid { grid-template-columns: 1fr; }
   .chip-grid { grid-template-columns: 1fr 1fr; }
-  .trust__item { padding: 18px 8px; border-left: 0 !important; font-size: 1rem; }
-  .trust__item + .trust__item { border-top: 1px solid var(--line); }
   .sourcing-band { padding: 26px 20px; }
   .form, .contact-card, .mv__card { padding: 30px 22px; }
   .form-grid { grid-template-columns: 1fr; }
@@ -784,7 +881,7 @@ p { margin: 0 0 1.1em; }
   .pack-opt:first-child { border-top: 0; }
   .pack-strip img { height: 160px; }
   .footer-top { grid-template-columns: 1fr; gap: 36px; padding: 60px 0 40px; }
-  .page-hero .wrap { padding-top: 72px; padding-bottom: 64px; }
+  .page-hero .wrap { padding-top: calc(72px + var(--header-h)); padding-bottom: 64px; }
   .spec-table th, .spec-table td { padding: 10px 12px; }
   .btn { white-space: normal; text-align: center; }
   .btn-row .btn { flex: 1 1 100%; }
@@ -792,7 +889,7 @@ p { margin: 0 0 1.1em; }
 
 /* ---------- Our story (about page) ---------- */
 .story-hero {
-  position: relative; display: flex; align-items: flex-end; min-height: min(82vh, 760px);
+  position: relative; display: flex; align-items: flex-end; min-height: calc(min(82vh, 760px) + var(--header-h));
   background: #011d2f; color: var(--linen); overflow: hidden;
 }
 .story-hero__img { position: absolute; inset: 0; }
@@ -803,7 +900,7 @@ p { margin: 0 0 1.1em; }
     linear-gradient(90deg, rgba(1, 29, 47, 0.96) 0%, rgba(1, 29, 47, 0.84) 46%, rgba(1, 29, 47, 0) 74%),
     linear-gradient(0deg, rgba(1, 29, 47, 0.7) 0%, rgba(1, 29, 47, 0) 45%);
 }
-.story-hero .wrap { position: relative; z-index: 1; padding-top: 96px; padding-bottom: 88px; }
+.story-hero .wrap { position: relative; z-index: 1; padding-top: calc(96px + var(--header-h)); padding-bottom: 88px; }
 .story-hero h1 { color: var(--white); max-width: 720px; margin-bottom: 22px; }
 .story-hero h1 em { display: block; color: #f2dcb2; }
 .story-hero__lead {
@@ -870,10 +967,10 @@ p { margin: 0 0 1.1em; }
 .story-close span { display: block; margin-top: 18px; font-style: italic; color: #f2dcb2; }
 
 @media (max-width: 860px) {
-  .story-hero { min-height: 620px; }
+  .story-hero { min-height: calc(620px + var(--header-h)); }
   .story-hero__img img { object-position: 62% 50%; }
   .story-hero__img::after { background: linear-gradient(0deg, rgba(1, 29, 47, 0.96) 0%, rgba(1, 29, 47, 0.72) 48%, rgba(1, 29, 47, 0.1) 100%); }
-  .story-hero .wrap { padding-top: 140px; padding-bottom: 56px; }
+  .story-hero .wrap { padding-top: calc(140px + var(--header-h)); padding-bottom: 56px; }
   .story { padding: 72px 0 8px; }
   .story__wrap { padding-left: 20px; padding-right: 20px; }
   .story__route { top: 10px; bottom: 64px; left: 20px; }

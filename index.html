@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261107b">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261108x">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -42,12 +42,14 @@
 
     <!-- Hero -->
     <section class="hero-sea">
-      <div class="hero-sea__img"><img src="assets/img/hero-sea.jpg" srcset="assets/img/hero-sea-1600.webp 1600w, assets/img/hero-sea-2400.webp 2400w, assets/img/hero-sea-3840.webp 3840w" sizes="(max-width: 640px) 620px, 100vw" width="3840" height="1628" alt="Container ship crossing a deep green sea towards a stone quay with sacks and bowls of Indian spices and grains" fetchpriority="high"></div>
+      <div class="hero-sea__img"><picture>
+        <source media="(max-width: 900px)" srcset="assets/img/hero-home-phone.webp" width="1126" height="2000">
+        <img src="assets/img/hero-home-hd.webp" width="2000" height="1126" alt="Container ship crossing a deep blue sea towards a stone quay with bowls and sacks of Indian spices and grains" fetchpriority="high">
+      </picture></div>
       <div class="wrap">
         <div class="hero-sea__copy">
           <span class="eyebrow eyebrow--light">Connecting Oceans. Delivering Trust.</span>
           <h1>India’s agricultural heritage, <em>thoughtfully sourced.</em></h1>
-          <p class="lead">India’s agricultural diversity offers a wide range of products and opportunities. At Oceanhold Exports, we connect international buyers with Indian agricultural products through our sourcing network, helping businesses find the right products and coordinate their export requirements.</p>
           <div class="btn-row">
             <a class="btn btn--gold" href="products.html">Explore Products <svg class="icon"><use href="#i-arrow"/></svg></a>
             <a class="btn btn--ghost-light" href="contact.html?type=Discuss%20Bulk%20Requirements">Discuss Your Requirements</a>
@@ -56,13 +58,24 @@
       </div>
     </section>
 
-    <!-- Trust strip -->
-    <section class="trust" aria-label="Highlights">
-      <div class="wrap trust__grid">
-        <div class="trust__item"><svg class="icon"><use href="#i-sprout"/></svg>Diverse Product<br>Sourcing</div>
-        <div class="trust__item"><svg class="icon"><use href="#i-handshake"/></svg>Processing Partners<br>Across India</div>
-        <div class="trust__item"><svg class="icon"><use href="#i-award"/></svg>Quality &amp; Specification<br>Coordination</div>
-        <div class="trust__item"><svg class="icon"><use href="#i-globe"/></svg>End-to-End<br>Export Support</div>
+    <!-- Highlights: route from India to the world -->
+    <section class="route-band" aria-label="How we work">
+      <div class="wrap">
+        <div class="route-band__head reveal"><span class="eyebrow eyebrow--center">From India to the World</span></div>
+        <div class="route-band__route">
+          <svg class="route-band__svg" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+            <defs><clipPath id="route-clip"><rect class="route-band__clip" x="0" y="-20" width="0" height="140"/></clipPath></defs>
+            <path class="route-band__base" d="M0 50 Q62.5 10 125 50 T250 50 T375 50 T500 50 T625 50 T750 50 T875 50 T1000 50"/>
+            <path class="route-band__done" clip-path="url(#route-clip)" d="M0 50 Q62.5 10 125 50 T250 50 T375 50 T500 50 T625 50 T750 50 T875 50 T1000 50"/>
+          </svg>
+          <span class="route-band__ship" aria-hidden="true"><svg class="icon"><use href="#i-ship"/></svg></span>
+          <ol class="route-band__stops">
+            <li><svg class="icon"><use href="#i-seeds"/></svg><h3>Diverse Product <em>Sourcing</em></h3><p>Millets, sorghum, spices, rice, coffee and more, sourced across India to your requirement.</p></li>
+            <li><svg class="icon"><use href="#i-factory"/></svg><h3>Processing Partners <em>Across India</em></h3><p>Selected processing units where produce is cleaned, graded and prepared for market.</p></li>
+            <li><svg class="icon"><use href="#i-clipboard-list"/></svg><h3>Quality &amp; Specification <em>Coordination</em></h3><p>Product details, samples and grades reviewed, with laboratory testing arranged where required.</p></li>
+            <li><svg class="icon"><use href="#i-globe"/></svg><h3>End-to-End <em>Export Support</em></h3><p>Applicable documentation, logistics and shipment coordination.</p></li>
+          </ol>
+        </div>
       </div>
     </section>
 
@@ -104,7 +117,7 @@
             </div>
           </a>
           <a class="p-card reveal" href="products.html#cat-millets">
-            <div class="p-card__img"><img src="assets/img/millet-wide.jpg" alt="Little millet in a wooden bowl with a scoop" loading="lazy"></div>
+            <div class="p-card__img"><img src="assets/img/cat-commodities.jpg" alt="Grains in a speckled ceramic bowl" loading="lazy"></div>
             <div class="p-card__body">
               <span class="p-card__tag">10 products</span>
               <h3>Millets &amp; Ancient Grains</h3>
@@ -122,7 +135,7 @@
             </div>
           </a>
           <a class="p-card reveal" href="products.html#cat-commodities">
-            <div class="p-card__img"><img src="assets/img/cat-commodities.jpg" alt="Grains in a speckled ceramic bowl" loading="lazy"></div>
+            <div class="p-card__img"><img src="assets/img/cat-sorghum-grains.webp" alt="Close-up of white sorghum grains" loading="lazy"></div>
             <div class="p-card__body">
               <span class="p-card__tag">2 products</span>
               <h3>Agricultural Commodities</h3>
@@ -145,7 +158,7 @@
             <a class="chip" href="products.html#cat-spices"><svg class="icon"><use href="#i-pod"/></svg>Whole Spices</a>
             <a class="chip" href="products.html#cat-rice"><svg class="icon"><use href="#i-bowl"/></svg>Rice &amp; Grains</a>
             <a class="chip" href="products.html#cat-pulses"><svg class="icon"><use href="#i-pepper"/></svg>Pulses &amp; Legumes</a>
-            <a class="chip" href="products.html#cat-processed"><svg class="icon"><use href="#i-spice"/></svg>Processed Products</a>
+            <a class="chip" href="products.html#cat-processed"><svg class="icon"><use href="#i-spice"/></svg>Natural Flours &amp; Powders</a>
             <a class="chip" href="products.html#cat-oils"><svg class="icon"><use href="#i-drop"/></svg>Coconut Oil</a>
           </div>
         </div>
@@ -339,6 +352,6 @@
     <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg>
   </a>
 
-  <script src="assets/js/main.js?v=20261107"></script>
+  <script src="assets/js/main.js?v=20261108s"></script>
 </body>
 </html>

@@ -62,10 +62,36 @@
 
   /* ---------- Header ---------- */
   var header = document.querySelector(".site-header");
+  // Background colour of the section behind the header: walk up from the section until a solid colour is found
+  var sectionColour = function (el) {
+    el = el && el.closest("section, footer, .route-band") || el;
+    while (el && el !== document.documentElement) {
+      var m = window.getComputedStyle(el).backgroundColor.match(/[\d.]+/g);
+      if (m && (m.length < 4 || parseFloat(m[3]) > 0.5)) return [+m[0], +m[1], +m[2]];
+      el = el.parentElement;
+    }
+    var b = window.getComputedStyle(document.body).backgroundColor.match(/[\d.]+/g);
+    return b ? [+b[0], +b[1], +b[2]] : [246, 241, 231];
+  };
   var onScroll = function () {
-    if (header) header.classList.toggle("is-scrolled", window.scrollY > 8);
+    if (!header) return;
+    header.classList.toggle("is-scrolled", window.scrollY > 8);
+    // Look at what sits behind the middle of the header
+    var y = header.getBoundingClientRect().height / 2;
+    var stack = document.elementsFromPoint ? document.elementsFromPoint(window.innerWidth / 2, y) : [];
+    var behind = null;
+    for (var i = 0; i < stack.length; i++) {
+      if (!header.contains(stack[i]) && !stack[i].closest(".wa-float")) { behind = stack[i]; break; }
+    }
+    // The bar takes that section's colour (cream on cream, white on white, dark on dark);
+    // dark colours switch the logo to gold and the menu to white
+    var c = sectionColour(behind);
+    header.style.setProperty("--hdr-bg", "rgba(" + c[0] + ", " + c[1] + ", " + c[2] + ", 0.94)");
+    header.classList.toggle("on-dark", (c[0] * 0.299 + c[1] * 0.587 + c[2] * 0.114) < 140);
   };
   window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  window.addEventListener("load", onScroll);
   onScroll();
 
   var toggle = document.querySelector(".nav-toggle");
@@ -358,6 +384,102 @@
     window.addEventListener("scroll", onRouteScroll, { passive: true });
     window.addEventListener("resize", onRouteScroll);
     updateRoute();
+  }
+
+  /* ---------- Highlights route (home): ship glides India to the world as you scroll ---------- */
+  var band = document.querySelector(".route-band");
+  if (band && band.querySelector(".route-band__svg")) {
+    var rbBase = band.querySelector(".route-band__base");
+    var rbClip = band.querySelector(".route-band__clip");
+    var rbShip = band.querySelector(".route-band__ship");
+    var rbSvg = band.querySelector(".route-band__svg");
+    var rbStops = band.querySelectorAll(".route-band__stops li");
+    var rbXs = [125, 375, 625, 875];
+    var rbLen = rbBase.getTotalLength();
+    var rbStill = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var rbTarget = 0, rbNow = 0, rbRunning = false;
+    var rbClamp = function (v) { return Math.min(1, Math.max(0, v)); };
+
+    // The ship sets off from the start of the line as the route appears at the bottom of
+    // the screen and reaches the end as the route reaches the top, using the page's normal scroll
+    var rbMeasure = function () {
+      if (rbStill) { rbTarget = 1; return; }
+      var vh = window.innerHeight;
+      var header = document.querySelector(".site-header");
+      var topEdge = (header ? header.getBoundingClientRect().bottom : 0) + 30;
+      var row = rbSvg.getBoundingClientRect();
+      if (!row.height) row = band.querySelector(".route-band__stops").getBoundingClientRect(); // phones: no drawn line
+      var scrolled = window.pageYOffset;
+      var rowY = row.top + row.height / 2 + scrolled;          // route line's position on the page
+      var from = Math.max(0, rowY - vh * 0.92);                 // scroll where the voyage begins (never before the top of the page)
+      var to = Math.max(from + 1, rowY - topEdge);              // scroll where the line reaches the top of the screen
+      rbTarget = rbClamp((scrolled - from) / (to - from));
+    };
+    var rbPaint = function (p) {
+      var pt = rbBase.getPointAtLength(p * rbLen);
+      rbClip.setAttribute("width", pt.x);
+      rbShip.style.left = (pt.x / 10) + "%";
+      rbShip.style.top = (pt.y / 100 * rbSvg.getBoundingClientRect().height) + "px";
+      rbStops.forEach(function (li, i) { li.classList.toggle("is-on", pt.x >= rbXs[i] - 4); });
+    };
+    // Ease towards the scroll position so the ship glides instead of jumping
+    var rbTick = function () {
+      rbNow += (rbTarget - rbNow) * 0.05;
+      if (Math.abs(rbTarget - rbNow) < 0.0008) { rbNow = rbTarget; rbRunning = false; }
+      rbPaint(rbNow);
+      if (rbRunning) window.requestAnimationFrame(rbTick);
+    };
+    // Phones show the route as a vertical list with no ship: a wavy line weaves through the dots,
+    // fills as you scroll, and each dot lights as its item scrolls into view
+    var rbList = band.querySelector(".route-band__stops");
+    var NS = "http://www.w3.org/2000/svg";
+    var rbV = document.createElementNS(NS, "svg");
+    rbV.setAttribute("class", "route-band__vsvg");
+    rbV.setAttribute("aria-hidden", "true");
+    rbV.innerHTML = '<defs><clipPath id="route-vclip"><rect class="route-band__vclip" x="-20" y="0" width="60" height="0"/></clipPath></defs>' +
+      '<path class="route-band__base"/><path class="route-band__done" clip-path="url(#route-vclip)"/>';
+    rbList.insertBefore(rbV, rbList.firstChild);
+    var rbVClip = rbV.querySelector(".route-band__vclip");
+    var rbVStartY = 0;
+    var rbVertical = function () { return !rbSvg.getBoundingClientRect().height; };
+    var rbDrawCurve = function () {
+      if (!rbVertical()) return;
+      rbList.classList.add("has-curve");
+      var x = 13, bend = 11;                       // dot centre and how far the wave swings either side
+      var ys = [];
+      rbStops.forEach(function (li) { ys.push(li.offsetTop + 16); });
+      var d = "M" + x + " " + ys[0];
+      for (var i = 1; i < ys.length; i++) {
+        var a = ys[i - 1], b = ys[i], h = b - a, s = i % 2 ? 1 : -1;
+        d += " C" + (x + s * bend) + " " + (a + h / 3) + " " + (x - s * bend) + " " + (a + 2 * h / 3) + " " + x + " " + b;
+      }
+      rbV.querySelectorAll("path").forEach(function (p) { p.setAttribute("d", d); });
+      rbV.setAttribute("width", 26);
+      rbV.setAttribute("height", rbList.offsetHeight);
+      rbVStartY = ys[0];
+    };
+    var rbLightStops = function () {
+      var line = window.innerHeight * 0.8;
+      rbStops.forEach(function (li) { li.classList.toggle("is-on", rbStill || li.getBoundingClientRect().top < line); });
+      var filled = rbStill ? rbList.offsetHeight : line - rbList.getBoundingClientRect().top;
+      rbVClip.setAttribute("height", Math.max(0, Math.min(rbList.offsetHeight, filled)));
+    };
+    var rbOnScroll = function () {
+      if (rbVertical()) { rbLightStops(); return; }
+      rbMeasure();
+      if (!rbRunning) { rbRunning = true; window.requestAnimationFrame(rbTick); }
+    };
+    window.addEventListener("scroll", rbOnScroll, { passive: true });
+    window.addEventListener("resize", function () { rbDrawCurve(); rbOnScroll(); });
+    window.addEventListener("load", function () { rbDrawCurve(); rbOnScroll(); });
+    if (rbVertical()) {
+      rbDrawCurve();
+      rbLightStops();
+    } else {
+      rbMeasure();
+      rbNow = rbTarget;
+      rbPaint(rbNow);
+    }
   }
 
   /* ---------- Year ---------- */
