@@ -216,9 +216,9 @@ body:not(.nav-open) .site-header.on-dark:not(.is-scrolled) {
   background: transparent; border-bottom-color: transparent; box-shadow: none;
   backdrop-filter: none; -webkit-backdrop-filter: none;
 }
-body:not(.nav-open) .site-header.on-dark .logo__name { color: #e6c88e; }
-body:not(.nav-open) .site-header.on-dark .logo__sub { color: #d9bf94; }
-/* Over each page's first banner only: white OCEANHOLD with gold EXPORTS */
+/* Over any dark background (banners, dark green bands, footer): white OCEANHOLD with gold EXPORTS */
+body:not(.nav-open) .site-header.on-dark .logo__name { color: #fff; }
+body:not(.nav-open) .site-header.on-dark .logo__sub { color: #e6c88e; }
 body:not(.nav-open) .site-header.on-home-hero .logo__name { color: #fff; }
 body:not(.nav-open) .site-header.on-home-hero .logo__sub { color: #e6c88e; }
 body:not(.nav-open) .site-header.on-dark .logo__sub::before,
@@ -536,7 +536,7 @@ body:not(.nav-open) .site-header.on-dark .nav-toggle span::after { background: #
 
 /* Packaging */
 .pack-strip { border-radius: var(--radius); overflow: hidden; margin-top: 56px; box-shadow: var(--shadow); }
-.pack-strip img { width: 100%; height: 240px; object-fit: cover; }
+.pack-strip img { width: 100%; height: auto; }   /* shows the whole photo at its own shape, no cropping */
 .pack-options { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px; }
 .pack-opt { text-align: center; padding: 26px 18px; }
 .pack-opt .icon { width: 38px; height: 38px; color: var(--forest); margin-bottom: 14px; }
@@ -901,7 +901,6 @@ body:not(.nav-open) .site-header.on-dark .nav-toggle span::after { background: #
   .pack-options { grid-template-columns: 1fr; }
   .pack-opt { border-left: 0 !important; border-top: 1px solid var(--line); }
   .pack-opt:first-child { border-top: 0; }
-  .pack-strip img { height: 160px; }
   .footer-top { grid-template-columns: 1fr; gap: 36px; padding: 60px 0 40px; }
   .page-hero .wrap { padding-top: calc(72px + var(--header-h)); padding-bottom: 64px; }
   .spec-table th, .spec-table td { padding: 10px 12px; }
@@ -915,12 +914,15 @@ body:not(.nav-open) .site-header.on-dark .nav-toggle span::after { background: #
   background: #011d2f; color: var(--linen); overflow: hidden;
 }
 .story-hero__img { position: absolute; inset: 0; }
-.story-hero__img img { width: 100%; height: 100%; object-fit: cover; object-position: 100% 40%; }
+.story-hero__img picture { display: block; width: 100%; height: 100%; }
+.story-hero__img img { width: 100%; height: 100%; object-fit: cover; object-position: 75% 50%; }
+/* Sea-cliff photo: open sea on the left carries the text, cliffs stay bright on the right */
 .story-hero__img::after {
   content: ""; position: absolute; inset: 0;
   background:
-    linear-gradient(90deg, rgba(1, 29, 47, 0.96) 0%, rgba(1, 29, 47, 0.84) 46%, rgba(1, 29, 47, 0) 74%),
-    linear-gradient(0deg, rgba(1, 29, 47, 0.7) 0%, rgba(1, 29, 47, 0) 45%);
+    linear-gradient(90deg, rgba(1, 29, 47, 0.82) 0%, rgba(1, 29, 47, 0.55) 40%, rgba(1, 29, 47, 0) 66%),
+    linear-gradient(0deg, rgba(1, 29, 47, 0.6) 0%, rgba(1, 29, 47, 0) 42%),
+    linear-gradient(180deg, rgba(1, 29, 47, 0.45) 0%, rgba(1, 29, 47, 0) 160px);
 }
 .story-hero .wrap { position: relative; z-index: 1; padding-top: calc(96px + var(--header-h)); padding-bottom: 88px; }
 .story-hero h1 { color: var(--white); max-width: 720px; margin-bottom: 22px; }
@@ -989,10 +991,11 @@ body:not(.nav-open) .site-header.on-dark .nav-toggle span::after { background: #
 .story-close span { display: block; margin-top: 18px; font-style: italic; color: #f2dcb2; }
 
 @media (max-width: 860px) {
-  .story-hero { min-height: calc(620px + var(--header-h)); }
-  .story-hero__img img { object-position: 62% 50%; }
-  .story-hero__img::after { background: linear-gradient(0deg, rgba(1, 29, 47, 0.96) 0%, rgba(1, 29, 47, 0.72) 48%, rgba(1, 29, 47, 0.1) 100%); }
-  .story-hero .wrap { padding-top: calc(140px + var(--header-h)); padding-bottom: 56px; }
+  /* Phones load the portrait photo: sky and sea at the top carry the text, the cliffs fill the bottom */
+  .story-hero { align-items: flex-start; min-height: 100vh; min-height: 100svh; }
+  .story-hero__img img { object-position: 50% 50%; }
+  .story-hero__img::after { background: linear-gradient(180deg, rgba(1, 29, 47, 0.88) 0%, rgba(1, 29, 47, 0.62) 42%, rgba(1, 29, 47, 0) 68%); }
+  .story-hero .wrap { padding-top: calc(36px + var(--header-h)); padding-bottom: 40px; }
   .story { padding: 72px 0 8px; }
   .story__wrap { padding-left: 20px; padding-right: 20px; }
   .story__route { top: 10px; bottom: 64px; left: 20px; }

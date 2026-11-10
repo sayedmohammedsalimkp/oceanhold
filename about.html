@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261109c">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261110c">
 
 </head>
 <body>
@@ -40,7 +40,10 @@
   <main id="main">
     <!-- Story: opening -->
     <section class="story-hero">
-      <div class="story-hero__img"><img src="assets/img/hero-sea.jpg" srcset="assets/img/hero-sea-1600.webp 1600w, assets/img/hero-sea-2400.webp 2400w, assets/img/hero-sea-3840.webp 3840w" sizes="100vw" width="3840" height="1628" alt="" fetchpriority="high"></div>
+      <div class="story-hero__img"><picture>
+        <source media="(max-width: 860px)" srcset="assets/img/about-hero-phone.webp" width="1440" height="2559">
+        <img src="assets/img/about-hero-1920.webp" srcset="assets/img/about-hero-1920.webp 1920w, assets/img/about-hero-full.webp 3344w" sizes="100vw" width="3344" height="1882" alt="" fetchpriority="high">
+      </picture></div>
       <div class="wrap">
         <div class="breadcrumb"><a href="index.html">Home</a> / About Us</div>
         <span class="eyebrow eyebrow--light reveal">Our Story</span>
@@ -85,11 +88,6 @@
           <div class="chapter__body">
             <p class="reveal">We knew that international trade could not be understood through research alone. Through a family connection, we had an opportunity to visit Qatar and learn from an established spices business. That experience gave us a closer look at how food products move through international markets, from sourcing and quality assessment to packaging, distribution and buyer expectations.</p>
             <p class="reveal">It also introduced us to products we had not previously explored in depth. Sorghum, known in India as jowar, caught our attention. As we learned more about its uses and market potential, our interest expanded towards ragi, other millets and eventually value-added products such as natural malts. Each discovery led to another question, and each question took us deeper into understanding the products and the markets they served.</p>
-            <div class="story-grains reveal">
-              <figure><img src="assets/img/sorghum.jpg" alt="White sorghum grains" loading="lazy"><figcaption>Sorghum</figcaption></figure>
-              <figure><img src="assets/img/ragi.jpg" alt="Ragi grains" loading="lazy"><figcaption>Ragi</figcaption></figure>
-              <figure><img src="assets/img/little-millet.jpg" alt="Little millet grains" loading="lazy"><figcaption>Millets</figcaption></figure>
-            </div>
           </div>
         </article>
 
@@ -164,23 +162,6 @@
           <div class="value reveal"><svg class="icon"><use href="#i-eye"/></svg><h3>Transparency</h3><p>Verified specifications and documents, with no exaggerated claims.</p></div>
           <div class="value reveal"><svg class="icon"><use href="#i-handshake"/></svg><h3>Long-Term Relationships</h3><p>We build trust and grow together with buyers and processing partners alike.</p></div>
         </div>
-      </div>
-    </section>
-
-    <!-- Global demand -->
-    <section class="section">
-      <div class="wrap split split--wide-media">
-        <div class="reveal">
-          <span class="eyebrow">Why Ancient Grains &amp; Superfoods</span>
-          <h2>Meeting a growing global demand</h2>
-          <ul class="check-list">
-            <li><svg class="icon"><use href="#i-check"/></svg><span><strong>Rising health consciousness.</strong> Consumers worldwide are shifting towards natural, nutrient-dense and functional foods.</span></li>
-            <li><svg class="icon"><use href="#i-check"/></svg><span><strong>Growing market opportunities.</strong> Strong demand for gluten-free, plant-based and clean-label products in key markets.</span></li>
-            <li><svg class="icon"><use href="#i-check"/></svg><span><strong>Versatile applications.</strong> Used across cereals, bakery, snacks, beverages and nutrition products.</span></li>
-          </ul>
-          <a class="btn btn--primary" href="products.html">Explore Our Products <svg class="icon"><use href="#i-arrow"/></svg></a>
-        </div>
-        <div class="split__media split__media--land reveal"><img src="assets/img/hero-grains.jpg" alt="Ragi, little millet, white jowar and moringa leaf powder" loading="lazy"></div>
       </div>
     </section>
 
