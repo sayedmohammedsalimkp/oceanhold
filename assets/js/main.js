@@ -214,6 +214,14 @@
     };
     box.querySelector(".panel__nav--prev").addEventListener("click", function () { step(-1); });
     box.querySelector(".panel__nav--next").addEventListener("click", function () { step(1); });
+    // Phones: a blurred copy of each photo fills the space around the full photo
+    box.querySelectorAll(".panel__media > img").forEach(function (img) {
+      var blur = img.cloneNode(false);
+      blur.className = "panel__media-blur";
+      blur.alt = "";
+      blur.setAttribute("aria-hidden", "true");
+      img.parentNode.insertBefore(blur, img);
+    });
     select(null);
   });
 
@@ -329,6 +337,13 @@
       btn.disabled = true;
       btn.textContent = "Sending…";
       status.classList.remove("is-visible");
+
+      // Also add the enquiry as a new row in the Google Sheet, when one is connected
+      if (form.dataset.sheet) {
+        var row = Object.assign({ Date: new Date().toISOString() }, payload);
+        delete row._subject; delete row._template; delete row._captcha; delete row._replyto;
+        fetch(form.dataset.sheet, { method: "POST", mode: "no-cors", body: JSON.stringify(row) }).catch(function () {});
+      }
 
       fetch(form.dataset.endpoint, {
         method: "POST",

@@ -1039,3 +1039,26 @@ body:not(.nav-open) .site-header.on-dark .nav-toggle span::after { background: #
   .story-grains { gap: 8px; }
   .story-grains figcaption { font-size: 0.95rem; }
 }
+
+/* Hidden sections stay hidden even if a rule gives them a display value */
+[hidden] { display: none !important; }
+
+/* Phones and tablets: the Edible Oils and Natural Flours (on request) photos show in full
+   inside a square frame, with a soft blurred copy of the same photo filling any spare space */
+.panel__media-blur { display: none; }
+@media (max-width: 960px) {
+  #cat-oils .panel__media, #cat-processed .panel__media { aspect-ratio: 1 / 1 !important; }
+  #cat-oils .panel__media img, #cat-processed .panel__media img { object-fit: contain; z-index: 1; }
+  #cat-oils .panel__media .panel__media-blur, #cat-processed .panel__media .panel__media-blur { display: block; z-index: 0; object-fit: cover; filter: blur(22px) brightness(0.85); transform: scale(1.15); }
+  #cat-oils .panel__num, #cat-processed .panel__num { z-index: 2; }
+  /* Flour photo: fill the card edge to edge, keeping the top (the bowl) in view */
+  #cat-processed .panel__media img { object-fit: cover; object-position: 50% 0; }
+  #cat-processed .panel__media .panel__media-blur { display: none; }
+  #cat-oils .panel__media::after, #cat-processed .panel__media::after { z-index: 1; }
+  .showcase:has(#cat-oils:not([hidden])) .panel__nav,
+  .showcase:has(#cat-processed:not([hidden])) .panel__nav { top: calc((100vw - 56px) / 2); }
+}
+@media (max-width: 640px) {
+  .showcase:has(#cat-oils:not([hidden])) .panel__nav,
+  .showcase:has(#cat-processed:not([hidden])) .panel__nav { top: calc((100vw - 36px) / 2); }
+}
