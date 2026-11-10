@@ -288,6 +288,23 @@ body:not(.nav-open) .site-header.on-dark .nav-toggle span::after { background: #
     background: linear-gradient(180deg, rgba(20, 12, 6, 0.7) 0%, rgba(20, 12, 6, 0.55) 55%, rgba(20, 12, 6, 0.3) 100%);
   }
 }
+/* Sea photo banner (Contact cargo ship): open sea on the left carries the text, ship and port on the right.
+   Phones load a portrait photo with sea at the top, so the text moves to the top there */
+.page-hero__bg picture { display: block; width: 100%; height: 100%; }
+.page-hero--sea { background: #011d2f; }
+.page-hero--sea .page-hero__bg img { object-position: 50% 50%; }
+.page-hero--sea .page-hero__bg::after {
+  background:
+    linear-gradient(90deg, rgba(1, 22, 34, 0.75) 0%, rgba(1, 22, 34, 0.45) 38%, rgba(1, 22, 34, 0) 60%),
+    linear-gradient(180deg, rgba(1, 22, 34, 0.45) 0%, rgba(1, 22, 34, 0) 160px);
+}
+@media (max-width: 900px) {
+  .page-hero--sea { align-items: flex-start; }
+  .page-hero--sea .page-hero__bg img { object-position: 50% 50%; }
+  .page-hero--sea .page-hero__bg::after {
+    background: linear-gradient(180deg, rgba(1, 22, 34, 0.8) 0%, rgba(1, 22, 34, 0.55) 40%, rgba(1, 22, 34, 0) 62%);
+  }
+}
 /* Green photo banner (Our Sourcing tea field): the whole photo is busy green, so a deep green fade
    covers the left for the text, and the photo is anchored right to keep the pickers in view */
 .page-hero--green { background: #0b2414; }
@@ -618,7 +635,7 @@ body:not(.nav-open) .site-header.on-dark .nav-toggle span::after { background: #
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--forest-deep); color: rgba(246, 241, 231, 0.7); font-size: 0.92rem; }
-.footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.3fr; gap: 48px; padding: 80px 0 56px; }
+.footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.3fr; gap: 48px; padding-top: 80px; padding-bottom: 56px; }
 .footer-top h4 { font-family: var(--sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: #d9bf94; margin-bottom: 20px; }
 .footer-top ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 .footer-top a:hover { color: var(--linen); }
@@ -627,8 +644,10 @@ body:not(.nav-open) .site-header.on-dark .nav-toggle span::after { background: #
 .footer-brand .logo__sub::before { display: none; }
 .footer-contact li { display: flex; gap: 10px; }
 .footer-contact .icon { width: 18px; height: 18px; color: #d9bf94; flex: none; margin-top: 4px; }
-.footer-bottom {
-  border-top: 1px solid rgba(246, 241, 231, 0.12); padding: 24px 0;
+/* The divider line spans exactly the content width, with the page's side margins kept on every screen */
+.footer-bottom.wrap {
+  width: calc(100% - 56px); max-width: calc(var(--wrap) - 56px); padding: 24px 0;
+  border-top: 1px solid rgba(246, 241, 231, 0.12);
   display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 0.82rem;
 }
 .footer-bottom em { font-family: var(--serif); font-size: 1.05rem; color: var(--linen); }
@@ -901,7 +920,8 @@ body:not(.nav-open) .site-header.on-dark .nav-toggle span::after { background: #
   .pack-options { grid-template-columns: 1fr; }
   .pack-opt { border-left: 0 !important; border-top: 1px solid var(--line); }
   .pack-opt:first-child { border-top: 0; }
-  .footer-top { grid-template-columns: 1fr; gap: 36px; padding: 60px 0 40px; }
+  .footer-top { grid-template-columns: 1fr; gap: 36px; padding-top: 60px; padding-bottom: 40px; }
+  .footer-bottom.wrap { width: calc(100% - 36px); }
   .page-hero .wrap { padding-top: calc(72px + var(--header-h)); padding-bottom: 64px; }
   .spec-table th, .spec-table td { padding: 10px 12px; }
   .btn { white-space: normal; text-align: center; }
@@ -916,6 +936,13 @@ body:not(.nav-open) .site-header.on-dark .nav-toggle span::after { background: #
 .story-hero__img { position: absolute; inset: 0; }
 .story-hero__img picture { display: block; width: 100%; height: 100%; }
 .story-hero__img img { width: 100%; height: 100%; object-fit: cover; object-position: 75% 50%; }
+/* Laptops and desktops: the banner fills the whole first screen; the photo is close to screen shape,
+   so only a sliver is trimmed */
+@media (min-width: 861px) {
+  .story-hero { align-items: center; min-height: 100vh; min-height: 100svh; }
+  .story-hero__img img { object-position: 50% 50%; }
+  .story-hero .wrap { padding-top: calc(24px + var(--header-h)) !important; padding-bottom: 24px !important; }
+}
 /* Sea-cliff photo: open sea on the left carries the text, cliffs stay bright on the right */
 .story-hero__img::after {
   content: ""; position: absolute; inset: 0;
