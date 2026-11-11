@@ -635,7 +635,7 @@ body:not(.nav-open) .site-header.on-dark .nav-toggle span::after { background: #
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--forest-deep); color: rgba(246, 241, 231, 0.7); font-size: 0.92rem; }
-.footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.3fr; gap: 48px; padding-top: 80px; padding-bottom: 56px; }
+.footer-top { display: grid; grid-template-columns: 1.6fr 1fr 1.4fr; gap: 48px; padding-top: 80px; padding-bottom: 56px; }
 .footer-top h4 { font-family: var(--sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: #d9bf94; margin-bottom: 20px; }
 .footer-top ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 .footer-top a:hover { color: var(--linen); }
@@ -857,6 +857,7 @@ body:not(.nav-open) .site-header.on-dark .nav-toggle span::after { background: #
   .product-grid { grid-template-columns: repeat(2, 1fr); }
   .sourcing-band { grid-template-columns: 1fr; gap: 24px; }
   .footer-top { grid-template-columns: 1fr 1fr; }
+  .footer-top .footer-brand { grid-column: 1 / -1; }
   .audience { grid-template-columns: repeat(3, 1fr); }
   .values { grid-template-columns: repeat(2, 1fr); }
 }
